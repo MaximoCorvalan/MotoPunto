@@ -1,0 +1,33 @@
+.layout {
+  display: grid;
+  grid-template-areas:
+    "nav"
+    "marcas"
+    "main"
+    "MarcarImg"
+    "footer";
+   grid-template-rows: auto auto 1fr auto auto;
+
+  height: 100vh;
+}
+
+
+main {
+  grid-area: main;
+  display: flex;
+
+}
+
+footer {
+  grid-area: footer;
+  background: #eee;
+  padding: 1rem;
+  text-align: center;
+}
+
+.Filtros
+{
+  width: 20vw;
+  background-color: rgb(124, 133, 173);
+}
+
