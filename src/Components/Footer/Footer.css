@@ -1,0 +1,27 @@
+footer {
+  grid-area: footer;
+  background-color:  #3d3b47;
+  color: white;
+  text-align: center;
+  justify-content: space-around;
+  padding: 17px;
+  display: flex;
+  flex-direction: column;
+}
+.footer-section
+{
+    gap: 4px;
+    display: flex;
+    flex-direction: column;
+}
+.footer-bottom
+{
+    margin-bottom: 10px;
+}
+.conteinFooterSeccions
+{
+
+    display: flex;
+    justify-content: space-evenly;
+}
+

@@ -3,31 +3,27 @@
   grid-template-areas:
     "nav"
     "marcas"
+    "filtros"
     "main"
-    "MarcarImg"
     "footer";
-   grid-template-rows: auto auto 1fr auto auto;
+   grid-template-rows: auto auto auto 1fr auto auto;
 
   height: 100vh;
 }
 
+.conteinerMain {
 
+margin-left: 30px;
+  width: 100%;
+  height: calc(100vh - 230px); /* ajustá según el tamaño de tu navbar/footer */
+  display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px; /* espacio entre columnas/filas */
+  overflow-y: auto;
+}
 main {
   grid-area: main;
   display: flex;
 
-}
-
-footer {
-  grid-area: footer;
-  background: #eee;
-  padding: 1rem;
-  text-align: center;
-}
-
-.Filtros
-{
-  width: 20vw;
-  background-color: rgb(124, 133, 173);
 }
 

@@ -1,0 +1,56 @@
+.ConteinerMarcas
+{
+  
+
+  margin: 0;
+  background-color: #0e0809;
+  height: 50px;
+    grid-area:marcas;
+  display:  flex;
+  flex-direction:  row;
+   align-items: center;
+  justify-content: space-around;
+
+}
+.marca-tab {
+  position: relative;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: white;
+
+  overflow: hidden;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+.marca-tab:hover {
+  background-color: #222;
+}
+
+.marca-label {
+  position: relative;
+  z-index: 1;
+}
+
+.highlight {
+  position: absolute;
+  inset: 0;
+  background-color:#630303;
+
+  z-index: 0;
+}
+.ConteinerMarcas li
+{
+  color: white;
+  text-decoration: none;
+   list-style: none;
+   cursor: pointer;
+}
+.ConteinerMarcas li:hover
+{
+  color:#c93737;
+
+   transform: scale(1.05);
+
+ 
+}

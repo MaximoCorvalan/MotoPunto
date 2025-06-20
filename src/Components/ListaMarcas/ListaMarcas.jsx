@@ -1,23 +1,29 @@
-import React from "react";
-import '../ListaMarcas/Marcas.css'
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import "../ListaMarcas/ListaMarcas.css";
 
-export default function ListaMarcas()
-{
-    return(
-        <>
+export default function ListaMarcas() {
+  const tabs = ["HONDA", "KAWASAKI", "BAJAJ", "GILERA", "CORVEN", "HERO", "TODOS"];
+  const [activeTab, setActiveTab] = useState("TODOS");
 
-    
-                <ul className="ConteinerMarcas"> 
-                    <li>HONDA</li>
-                    <li>KAWASAKI</li>
-                    <li>BAJAJ</li>
-                    <li>GILERA</li>
-                    <li>CORVEN</li>
-                    <li>HERO</li>
-                    <li>OTROS</li>
-                </ul>
-        
-        
-        </>
-    )
+  return (
+    <ul className="ConteinerMarcas">
+      {tabs.map((tab) => (
+        <li
+          key={tab}
+          className={`marca-tab ${activeTab === tab ? "active" : ""}`}
+          onClick={() => setActiveTab(tab)}
+        >
+          {activeTab === tab && (
+            <motion.div
+              layoutId="highlight"
+              className="highlight"
+              transition={{ type: "tween", stiffness: 500, damping: 70 }}
+            />
+          )}
+          <span className="marca-label">{tab}</span>
+        </li>
+      ))}
+    </ul>
+  );
 }

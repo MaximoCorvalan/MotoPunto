@@ -1,0 +1,119 @@
+.Filtro
+{
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  grid-area: filtros;
+  background-color: rgb(248, 248, 250);
+  display:  flex;
+  align-items: center;
+   justify-content:space-evenly;
+  box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.6);
+}
+.conteinerFiltroPrecio
+{
+  display:  flex;
+  align-items:  center;
+  gap: 10px;
+  margin: 0;
+}
+
+.select {
+  width: 5vw;
+  cursor: pointer;
+  position: relative; /* contenedor relativo para el absolute del menú */
+  transition: 300ms;
+  color: white;
+    box-sizing: border-box;
+  overflow: visible; /* para que el dropdown no quede cortado */
+}
+
+
+.selected {
+ background-color:#630303;
+  padding: 2px;
+  height: 2vh;
+
+
+  position: relative;
+  z-index: 10000;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.arrow {
+  position: relative;
+  right: 0px;
+  height: 10px;
+  transform: rotate(-90deg);
+  width: 25px;
+  fill: white;
+  z-index: 10000;
+  transition: 300ms;
+}
+
+.options {
+  position: absolute; /* fuera del flujo */
+  top: 100%; /* justo abajo del .selected */
+  left: 0;
+   width: 5vw;/* que tome el ancho del contenido o poné el que quieras */
+  border-radius: 5px;
+  padding: 1px;
+  color: black;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0;
+  pointer-events: none; /* para que no interfiera cuando está oculto */
+  transition: opacity 300ms ease;
+  z-index: 100000; /* para que quede por encima */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+/* From Uiverse.io by JayRamoliya */ 
+
+
+.option-item
+{
+  text-align: center;
+}
+.input-style:focus {
+  background-color:#630303;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.option-item:hover
+{
+  background-color:#630303;
+  color: white;
+}
+
+.select:hover > .options {
+  opacity: 1;
+  pointer-events: auto; /* habilita interacción */
+}
+
+
+.select:hover > .selected .arrow {
+  transform: rotate(0deg);
+}
+
+
+
+
+
+
+.conteinerFiltro
+{
+ 
+    display: flex;
+    align-items: center;
+    gap: 8px; /* separa el label del dropdown automáticamente */
+}
+
+p,
+.conteinerFiltro label {
+    font-weight: bold;
+ 
+}
+
+

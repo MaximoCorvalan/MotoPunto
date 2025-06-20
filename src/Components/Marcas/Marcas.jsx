@@ -1,12 +1,54 @@
 import { useState } from 'react'
-import React from 'react'
+
+import CardMoto from '../CardMoto/CardMoto'
 
 function Marcas({indicador =0}) {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <h1>marcas {indicador}</h1>
+   
+       <CardMoto></CardMoto>
+              <CardMoto></CardMoto>       <CardMoto></CardMoto>
+              
+       <CardMoto></CardMoto>
+              <CardMoto></CardMoto>       <CardMoto></CardMoto>
+                 <CardMoto></CardMoto>
+              <CardMoto></CardMoto>       <CardMoto></CardMoto>
+              
+       <CardMoto></CardMoto>
+              <CardMoto></CardMoto>       <CardMoto></CardMoto>
+                     <CardMoto></CardMoto>
+              <CardMoto></CardMoto>       <CardMoto></CardMoto>
+              
+       <CardMoto></CardMoto>
+              <CardMoto></CardMoto>       <CardMoto></CardMoto>
+                 <CardMoto></CardMoto>
+              <CardMoto></CardMoto>       <CardMoto></CardMoto>
+              
+       <CardMoto></CardMoto>
+              <CardMoto></CardMoto>       <CardMoto></CardMoto>
+
+                <CardMoto></CardMoto>
+              <CardMoto></CardMoto>       <CardMoto></CardMoto>
+              
+       <CardMoto></CardMoto>
+              <CardMoto></CardMoto>       <CardMoto></CardMoto>
+                 <CardMoto></CardMoto>
+              <CardMoto></CardMoto>       <CardMoto></CardMoto>
+              
+       <CardMoto></CardMoto>
+              <CardMoto></CardMoto>       <CardMoto></CardMoto>
+                     <CardMoto></CardMoto>
+              <CardMoto></CardMoto>       <CardMoto></CardMoto>
+              
+       <CardMoto></CardMoto>
+              <CardMoto></CardMoto>       <CardMoto></CardMoto>
+                 <CardMoto></CardMoto>
+              <CardMoto></CardMoto>       <CardMoto></CardMoto>
+              
+       <CardMoto></CardMoto>
+              <CardMoto></CardMoto>       <CardMoto></CardMoto>
     
     </>
   )
