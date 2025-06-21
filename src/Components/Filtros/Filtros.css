@@ -7,18 +7,26 @@
   background-color: rgb(248, 248, 250);
   display:  flex;
   align-items: center;
-   justify-content:space-evenly;
+   justify-content:space-between;
   box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.6);
 }
 .conteinerFiltroPrecio
 {
   display:  flex;
   align-items:  center;
-  gap: 10px;
+  gap: 15px;
   margin: 0;
+}
+.conteinerFiltros-f
+{
+  margin: 0;
+  display:  flex;
+  gap: 12px;
+  margin-left: 20px;
 }
 
 .select {
+
   width: 5vw;
   cursor: pointer;
   position: relative; /* contenedor relativo para el absolute del menú */
@@ -27,11 +35,15 @@
     box-sizing: border-box;
   overflow: visible; /* para que el dropdown no quede cortado */
 }
+.ConteinerCounter
+{
+  display: flex;
+}
 
 
 .selected {
  background-color:#630303;
-  padding: 2px;
+  padding: 3px;
   height: 2vh;
 
 
@@ -51,6 +63,7 @@
   fill: white;
   z-index: 10000;
   transition: 300ms;
+
 }
 
 .options {
@@ -110,10 +123,21 @@
     gap: 8px; /* separa el label del dropdown automáticamente */
 }
 
-p,
+
+.decoLabel,
 .conteinerFiltro label {
     font-weight: bold;
  
 }
 
 
+.InputPrecio
+{
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid #630303;
+}
+.InputPrecio:focus
+{
+    outline: 1.6px solid  #630303;
+}

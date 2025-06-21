@@ -1,7 +1,8 @@
 import "../Filtros/Filtros.css";
-import React from "react";
-import { use } from "react";
+
 import { useState } from "react";
+import Contador from "../ContadorAnimado/Contador"
+import { useEffect } from "react";
 export default function Filtros() {
   const [open, setOpen] = useState(false);
   const [openTipoMoto,setOpenTipoMoto]=useState(false);
@@ -19,19 +20,25 @@ const [seleccionMoto, setSeleccionMoto] = useState(" ");
   const opcinesTipoMoto = ["Enduro", "Naked", "Scooters"];
 
   const toggleDropdown = () => setOpen(!open);
-  const toggleDropdownMoto = () => setOpen(!openTipoMoto);
+  const toggleDropdownMoto = () => setOpenTipoMoto(!openTipoMoto);
   const seleccionarOpcionMoto = (opcion) => {
     setSeleccionMoto(opcion);
-    setOpen(false);
+    setOpenTipoMoto(false);
   };
   const seleccionarOpcion = (opcion) => {
     setSeleccion(opcion);
     setOpen(false);
   };
 
+  
   return (
+
+    
     <>
       <div className="Filtro">
+        <div className="conteinerFiltros-f">
+
+        
         <div className="conteinerFiltro">
           <label htmlFor=""> Cilindrada:</label>
           <div className="select">
@@ -78,7 +85,7 @@ const [seleccionMoto, setSeleccionMoto] = useState(" ");
               </svg>
             </div>
 
-            {open && (
+            {openTipoMoto && (
               <div className="options">
                 {opcinesTipoMoto.map((opcion, i) => (
                   <div
@@ -95,17 +102,24 @@ const [seleccionMoto, setSeleccionMoto] = useState(" ");
         </div>
 
         <div className="conteinerFiltroPrecio">
-          <p >Precio Maximo</p>
+          <p  className="decoLabel">Precio Maximo</p>
           <input
             placeholder="100000.00"
-            className="input-style"
+            className="InputPrecio"
+           
             type="text"
           />
         </div>
-
-        <div>
-          mas de 1000 clientes satifechos uwu
         </div>
+     
+
+    
+
+
+          <Contador></Contador>
+     
+   
+
       </div>
     </>
   );

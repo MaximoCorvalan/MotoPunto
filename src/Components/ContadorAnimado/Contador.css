@@ -1,0 +1,18 @@
+.Text
+{
+
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    color:#990c0c;
+    font-weight: bold;
+    
+    
+}
+.ConteinerVendidas
+{
+    display:  flex;
+    gap: 13px;
+    align-items: center;
+    margin-right: 20px;
+}
