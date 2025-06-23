@@ -48,7 +48,7 @@
 
 
   position: relative;
-  z-index: 10000;
+  z-index: 3;
   font-size: 15px;
   display: flex;
   align-items: center;
@@ -61,7 +61,7 @@
   transform: rotate(-90deg);
   width: 25px;
   fill: white;
-  z-index: 10000;
+  z-index: 2;
   transition: 300ms;
 
 }
@@ -79,7 +79,7 @@
   opacity: 0;
   pointer-events: none; /* para que no interfiera cuando está oculto */
   transition: opacity 300ms ease;
-  z-index: 100000; /* para que quede por encima */
+  z-index: 10; /* para que quede por encima */
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 /* From Uiverse.io by JayRamoliya */ 

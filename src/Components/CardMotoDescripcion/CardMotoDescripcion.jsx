@@ -1,36 +1,25 @@
-import react from "react";
-import { motion, AnimatePresence, scale } from 'framer-motion';
+import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import "../CardMotoDescripcion/CardMotoDescripcion.css";
+import DialogCont from "../DialogCont/DialogCont";
 
-export default function CardMotoDescripcion({isOpen})
-{
-    return(
-        <>
-        <AnimatePresence>
-            {alert("se abru")}
-            
-            {isOpen &&(
-                <>
-        
-                <motion.div
-                className="backDrop"
-                
-                >
-                    <motion.div
-                    className="modal"
-                  
-                    >
-                        putitaplinda
-                        
-                    </motion.div>
+export default function CardMotoDescripcion() {
+  return (
 
-                </motion.div>
+    <div className="ConteinerMotoDescripcion">
+        <div>
+        <img src="https://static.eldiario.es/clip/a5255f69-2560-4030-b42f-b301f981b1e3_16-9-discover-aspect-ratio_default_0.jpg" className="imgMotoDes" />
 
-                </>
-            )}
+        </div>
+        <div>
+            descripcion
+        </div>
 
-        </AnimatePresence>
-        
-        
-        </>
-    )
+    </div>
+   
+     
+       
+    
+ 
+  );
 }

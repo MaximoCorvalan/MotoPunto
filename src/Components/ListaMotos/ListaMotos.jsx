@@ -2,26 +2,28 @@ import { useState } from 'react'
 
 import CardMoto from '../CardMoto/CardMoto'
 import CardMotoDescripcion from '../CardMotoDescripcion/CardMotoDescripcion';
+import { dialog } from 'framer-motion/m';
+import DialogCont from '../DialogCont/DialogCont';
 
-function Marcas({indicador =0}) {
+function Marcas() {
   
     const [modalAbierto, setModalAbierto] = useState(false);
-  const [motoSeleccionada, setMotoSeleccionada] = useState(null);
+    const [motoSeleccionada, setMotoSeleccionada] = useState(null);
 
   const abrirModal = () => {
-
-    alert("ne")
     setModalAbierto(true);
   };
 
   return (
     <>
+      
    
-         {[...Array(30)].map((_, i) => (
+         {[...Array(40)].map((_, i) => (
         <CardMoto key={i} onclick={abrirModal} />
       ))}
       {modalAbierto&&(
-       <CardMotoDescripcion isOpen={modalAbierto}></CardMotoDescripcion>
+        <DialogCont  isOpen={modalAbierto} onClose={()=>setModalAbierto(false)} children={<CardMotoDescripcion></CardMotoDescripcion>}></DialogCont>
+      
       )}
     
     </>

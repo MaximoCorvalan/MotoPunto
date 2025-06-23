@@ -1,0 +1,43 @@
+.LogoLogin
+{
+    width: 150px;
+    height: 90px;
+}
+.ConteinerLogin
+{
+   
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 17vw;
+    padding: 20px;
+   
+
+}
+.insert
+{
+    margin-top: 10px;
+    display:  flex;
+    flex-direction: column;
+    gap:10px
+}
+.insert input
+{
+    width: 100%;
+     outline: none;
+}
+.btnInciarSesion
+{
+    margin-top: 15px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    color: white;
+   background-color:#630303;;
+   
+}
+.btnInciarSesion:hover
+{
+  
+      background-color:#6d2525;;
+}
