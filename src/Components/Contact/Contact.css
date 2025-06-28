@@ -1,27 +1,7 @@
-.ConteinerContactt {
+.ConteinerContact {
   display: flex;
   flex-direction: column;
   height: 55vh;
   width: 80vh;
   align-items: center;
-}
-
-h3 {
-  color: black;
-}
-
-.conteinerMotoContact {
-  display: flex;
-  background-color: aqua;
-  width: 100%;
-  justify-content: center;
-  gap: 30px;
-}
-
-
-.conteinerMotoContact >label{}
-
-.inputContact {
-  width: 90px;
-
 }

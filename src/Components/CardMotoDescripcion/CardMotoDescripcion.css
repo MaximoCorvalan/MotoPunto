@@ -1,6 +1,6 @@
 .ConteinerMotoD
 {
-  height: 47vh;
+  height: 45vh;
   display: flex;
   width: 55vw;
   box-sizing: border-box;
@@ -9,7 +9,7 @@
   justify-content: center;
   
 
-  
+
 }
 .imgMotoDes
 {
@@ -28,13 +28,15 @@
 
 
 
+
+
 }
 .conteinerMotoParent
 {
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  height: 53vh;
 }
 .btnContacto
 {
@@ -73,6 +75,25 @@ overflow-y: auto;
   height: 80%;
   width: 70%;
 
+}
+.llamada
+{
+  background-color: rgb(122, 175, 42);
+
+  box-sizing: border-box;
+  padding: 5px;
+  color: white;
+
+
+  border: none;
+ 
+}
+.conteinerAnimation
+{ max-width :70%;
+   box-sizing: border-box;
+   
+  margin: 0;
+  padding: 0;
 }
 .c1 strong {
   margin-right: 5px;

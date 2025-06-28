@@ -1,7 +1,7 @@
 import react from "react"
 import logo from '../../assets/img/Logoo.png'
 import "../InicioSesion/InicioSesion.css"
-export default function InicioSesion()
+export default function InicioSesion({ onClose })
 {
 
     return(
@@ -20,9 +20,12 @@ export default function InicioSesion()
 
             </div>
 
-            <button className="btnInciarSesion">
+            <button className="btnInciarSesion" onClick={onClose}>
                 Iniciar Sesion
             </button>
+
+
+            <a className="register">Registrarse</a>
            
 
         </div>

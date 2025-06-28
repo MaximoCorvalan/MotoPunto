@@ -11,7 +11,7 @@ import Contacto from "../Contact/Contact";
 function NavBar() {
   
   const [modalAbierto, setModalAbierto] = useState(false);
-  const [modalAbiertoContacto,setModalAbiertoContato] = useState(false)
+ 
   const moto = {
   marca: "Yamaha",
   modelo: "MT-03",
@@ -31,19 +31,13 @@ function NavBar() {
 
 
                 <li className="iniciarSesionLbl" > <a onClick={()=>setModalAbierto(true)}>Iniciar sesion</a></li>
-                <li ><a onClick={()=>setModalAbiertoContato(true)}>Contacto</a></li>
-         
+            
             </ul>
             {modalAbierto&&(
             <DialogCont isOpen={modalAbierto} onClose={()=>setModalAbierto(false)} children={<InicioSesion/>}/>
             )}
 
-            {modalAbiertoContacto&&(
-              <>
-             
-              <DialogCont isOpen={modalAbiertoContacto}  onClose={()=>setModalAbiertoContato(false)} children={<Contacto moto={moto} bandera={false}/>}/>
-              </>
-            )}
+      
            
             
 

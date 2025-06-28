@@ -21,7 +21,9 @@ export default function DialogCont({ isOpen, onClose, children }) {
           className="modal"
           
           >
-            {children}
+             {React.isValidElement(children)
+                ? React.cloneElement(children, { onClose })
+                : children}
           </motion.div>
        
         </motion.div>

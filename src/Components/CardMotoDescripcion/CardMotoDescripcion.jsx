@@ -1,9 +1,20 @@
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import "../CardMotoDescripcion/CardMotoDescripcion.css";
-import DialogCont from "../DialogCont/DialogCont";
 
-export default function CardMotoDescripcion() {
+import "../CardMotoDescripcion/CardMotoDescripcion.css";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+
+
+export default function CardMotoDescripcion({onClose}) {
+
+  const[enviado,setEnviado] =useState(false)
+  function recibirAsesoramiento()
+  {
+    setEnviado(true)
+
+  }
+
+  
   return (
     <div className="conteinerMotoParent">
 
@@ -105,7 +116,30 @@ export default function CardMotoDescripcion() {
       </div>
        
       </div>
-       <button className="btnContacto">Contacto</button>
+
+      {!enviado?(
+        
+        <button className="btnContacto" onClick={recibirAsesoramiento}>Recibir asesoramiento</button>
+      ):(
+        <>
+           <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.4,
+              scale: { type: "spring", visualDuration: 0.4  },
+            }}
+            className="conteinerAnimation"
+         
+            >
+     
+            <p  className="llamada">En breve recibirás una llamada al siguiente número 112342</p>
+        </motion.div>
+
+          </>
+      )
+    }
+
  </div>
   );
 }
