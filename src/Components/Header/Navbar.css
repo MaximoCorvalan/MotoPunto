@@ -18,7 +18,11 @@ nav {
   margin-right: 50px;      
         /* Opcional: para ajustar el margen */
 }
-
+.iniciarSesionLbl:hover
+{
+    cursor: pointer;
+  
+}
 .inutNavbar
 { 
   border-radius: 10px;

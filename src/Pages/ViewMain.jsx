@@ -1,15 +1,16 @@
 import { Routes, Route, NavLink } from "react-router-dom";
-import Marcas from '../Components/ListaMotos/ListaMotos'
-import './Rutas.css'
+import ListaMotos from '../Components/ListaMotos/ListaMotos'
+
 import Filtros from "../Components/Filtros/Filtros";
 import ListaMarcas from "../Components/ListaMarcas/ListaMarcas";
 import NavBar from "../Components/Header/Navbar";
 import Footer from "../Components/Footer/Footer";
-import CardMotoDescripcion from "../Components/CardMotoDescripcion/CardMotoDescripcion";
+import '../Pages/viewMain.css'
 
 
 
-export default function Rutas() {
+
+export default function ViewMain() {
     return (
         <>
       
@@ -27,7 +28,7 @@ export default function Rutas() {
               <div className="conteinerMain">
               <Routes>
            
-                <Route path="" element={<Marcas />} />
+                <Route path="" element={<ListaMotos />} />
         
               </Routes>
               </div>

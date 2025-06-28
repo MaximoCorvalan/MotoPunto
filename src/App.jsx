@@ -2,7 +2,8 @@ import { useState } from 'react'
 
 import { BrowserRouter } from "react-router-dom";
 import './App.css'
-import  Rutas  from './Router/Rutas'
+
+import ViewMain from './Pages/viewMain';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,7 +11,7 @@ function App() {
   return (
     <>
     <BrowserRouter>
-      <Rutas />
+      <ViewMain />
     </BrowserRouter>
     </>
   )

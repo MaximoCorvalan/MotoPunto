@@ -1,5 +1,5 @@
 import react from "react"
-import logo from '../../img/Logoo.png'
+import logo from '../../assets/img/Logoo.png'
 import "../InicioSesion/InicioSesion.css"
 export default function InicioSesion()
 {

@@ -1,0 +1,36 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+ 
+
+  height: 100vh;
+}
+
+
+.conteinerMain {
+
+
+  width: 100vw;
+  margin-left: 13px;
+
+
+  display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px; /* espacio entre columnas/filas */
+  overflow-y: auto;
+
+
+}
+main {
+  grid-area: main;
+  display: flex;
+   height: 77vh;
+}
+
+@media screen and (max-width: 1605px) {
+ main {
+  grid-area: main;
+  display: flex;
+   height: 65vh;
+}
+}

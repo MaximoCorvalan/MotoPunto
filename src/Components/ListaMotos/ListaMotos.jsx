@@ -5,7 +5,7 @@ import CardMotoDescripcion from '../CardMotoDescripcion/CardMotoDescripcion';
 import { dialog } from 'framer-motion/m';
 import DialogCont from '../DialogCont/DialogCont';
 
-function Marcas() {
+function ListaMotos() {
   
     const [modalAbierto, setModalAbierto] = useState(false);
     const [motoSeleccionada, setMotoSeleccionada] = useState(null);
@@ -30,4 +30,4 @@ function Marcas() {
   )
 }
 
-export default Marcas
+export default ListaMotos
