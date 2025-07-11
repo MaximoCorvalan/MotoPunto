@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 import DialogCont from "../DialogCont/DialogCont";
 import { useState } from "react";
 import InicioSesion from "../InicioSesion/InicioSesion";
-import Contacto from "../Contact/Contact";
+
 function NavBar() {
   
   const [modalAbierto, setModalAbierto] = useState(false);

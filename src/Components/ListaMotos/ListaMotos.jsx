@@ -1,33 +1,48 @@
-import { useState } from 'react'
-
-import CardMoto from '../CardMoto/CardMoto'
+import { useState } from 'react';
+import data from '../../Data/Moto.json';
+import CardMoto from '../CardMoto/CardMoto';
 import CardMotoDescripcion from '../CardMotoDescripcion/CardMotoDescripcion';
-import { dialog } from 'framer-motion/m';
 import DialogCont from '../DialogCont/DialogCont';
+import { useMotos } from '../../Context/ContextMoto';
 
 function ListaMotos() {
-  
-    const [modalAbierto, setModalAbierto] = useState(false);
-    const [motoSeleccionada, setMotoSeleccionada] = useState(null);
+  const [modalAbierto, setModalAbierto] = useState(false);
+  const [motoSeleccionada, setMotoSeleccionada] = useState(null);
+const { motos } = useMotos();
 
-  const abrirModal = () => {
+
+  const abrirModal = (moto) => {
+    setMotoSeleccionada(moto);
     setModalAbierto(true);
+ 
+
+  };
+
+  const cerrarModal = () => {
+    setModalAbierto(false);
+    setMotoSeleccionada(null);
+
   };
 
   return (
     <>
-      
-   
-         {[...Array(40)].map((_, i) => (
-        <CardMoto key={i} onclick={abrirModal} />
+      {motos.map((moto, index) => (
+        <CardMoto
+          key={index}
+          moto={moto}
+          onclick={() => abrirModal(moto)}
+        />
       ))}
-      {modalAbierto&&(
-        <DialogCont  isOpen={modalAbierto} onClose={()=>setModalAbierto(false)} children={<CardMotoDescripcion></CardMotoDescripcion>}></DialogCont>
-      
+
+      {modalAbierto && (
+        <DialogCont
+          isOpen={modalAbierto}
+          onClose={cerrarModal}
+          children={<CardMotoDescripcion motoSeleccionada={motoSeleccionada} />}
+        />
       )}
-    
     </>
-  )
+  );
 }
 
-export default ListaMotos
+export default ListaMotos;

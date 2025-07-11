@@ -1,145 +1,159 @@
 import React from "react";
-
 import "../CardMotoDescripcion/CardMotoDescripcion.css";
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import InnerImageZoom from 'react-inner-image-zoom';
 
 
-export default function CardMotoDescripcion({onClose}) {
+import { useState ,useEffect} from "react";
+import Swal from "sweetalert2"; 
 
-  const[enviado,setEnviado] =useState(false)
-  function recibirAsesoramiento()
-  {
-    setEnviado(true)
+export default function CardMotoDescripcion({ onClose,motoSeleccionada }) {
 
+  const [enviado, setEnviado] = useState(false);
+  const [urlImagen,setUrlImagen] = useState(motoSeleccionada.image[0])
+
+
+
+  if (!motoSeleccionada) {
+    return <div>Cargando información de la moto...</div>;
   }
 
-  
+  function recibirAsesoramiento() {
+    //AACA PREGUNTAR SI TIENE ESTA REGISTRADO Y DEMAS
+    setEnviado(true);
+
+    Swal.fire({
+      title: "¡Gracias por tu interés!",
+      text: "En breve un asesor se comunicará con vos al siguiente número 113242213",
+      icon: "success",
+      confirmButtonText: "Cerrar",
+      customClass: {
+        popup: "mi-alerta-custom",
+        confirmButton: "mi-boton-rojo",
+      },
+      showClass: {
+        popup: "swal2-show swal2-animate__fadeInDown",
+      },
+      hideClass: {
+        popup: "swal2-hide swal2-animate__fadeOutUp",
+      },
+    }).then((result)=>
+      {
+        if(result.isConfirmed)
+          {
+            onClose()
+          }
+      });
+  }
+
   return (
     <div className="conteinerMotoParent">
+      
+      <div className="ConteinerMotoD">
 
-    
-    <div className="ConteinerMotoD">
+        <div className="conteinerImgMoto">
 
         <img
-          src="https://static.eldiario.es/clip/a5255f69-2560-4030-b42f-b301f981b1e3_16-9-discover-aspect-ratio_default_0.jpg"
+          src={urlImagen}
           className="imgMotoDes"
-        />
+          />
 
-            
-       
-
-
-      <div className="conteinerDescripcionMoto">
-
-        <h2>Caracteristicas tecnicas</h2>
-
-
-        <div className="divCaract">
-          <div className="c1">
-            <strong>Motor </strong> 5T
+          <div className="contFotos">
+            {
+             motoSeleccionada.image.map((UrlMoto)=>
+                {
+                  return <div className="cuadro" onClick={()=>setUrlImagen(UrlMoto)}><img  className="contImg" src={UrlMoto} /> </div>;
+                })
+            }
+              
           </div>
-          <div className="c1">
-            <strong>Cilindrada </strong> 250cc
+          
           </div>
-        </div>
-
-         <div className="divCaract">
-          <div className="c1">
-            <strong>Potencia </strong> 26.5cv
-          </div>
-          <div className="c1">
-            <strong>Alimentación </strong> Inyeccion electronica
-          </div>
-        </div>
+    
 
 
-         <div className="divCaract">
-          <div className="c1">
-            <strong>Refrigeracion</strong> Liquida
-          </div>
-          <div className="c1">
-            <strong>Encendido </strong> Digital
-          </div>
-        </div>
-
-       
-
-         <div className="divCaract">
-          <div className="c1">
-            <strong>Transmición </strong> Cadena
-          </div>
-          <div className="c1">
-            <strong>Caja de cambio </strong> 6v
-          </div>
-        </div>
-
-
-         <div className="divCaract">
-          <div className="c1">
-            <strong>Iluminación </strong> LED
-          </div>
-          <div className="c1">
-            <strong>Capacidad de tanque </strong> 13l 
-          </div>
-        </div>
+        <div className="conteinerDescripcionMoto">
+          <h2>Caracteristicas tecnicas</h2>
 
           <div className="divCaract">
-          <div className="c1">
-            <strong>Neumático delantero </strong> 100/80/17 
+            <div className="c1">
+              <strong>Motor </strong> {motoSeleccionada.motor}
+            </div>
+            <div className="c1">
+              <strong>Cilindrada </strong> {motoSeleccionada.cilindrada}cc
+            </div>
           </div>
-          <div className="c1">
-            <strong>Neumático trasero </strong> 130/60/17
+
+          <div className="divCaract">
+            <div className="c1">
+              <strong>Potencia </strong> {motoSeleccionada.potencia}
+            </div>
+            <div className="c1">
+              <strong>Alimentación </strong> {motoSeleccionada.alimentacion}
+            </div>
+          </div>
+
+          <div className="divCaract">
+            <div className="c1">
+              <strong>Refrigeracion</strong> {motoSeleccionada.refrigeracion}
+            </div>
+            <div className="c1">
+              <strong>Encendido </strong> {motoSeleccionada.encendido}
+            </div>
+          </div>
+
+          <div className="divCaract">
+            <div className="c1">
+              <strong>Transmición </strong> {motoSeleccionada.transmision}
+            </div>
+            <div className="c1">
+              <strong>Caja de cambio </strong> {motoSeleccionada.cajaDeCambio}
+            </div>
+          </div>
+
+          <div className="divCaract">
+            <div className="c1">
+              <strong>Iluminación </strong> {motoSeleccionada.iluminacion}
+            </div>
+            <div className="c1">
+              <strong>Capacidad de tanque </strong> {motoSeleccionada.capacidadTanque}
+            </div>
+          </div>
+
+          <div className="divCaract">
+            <div className="c1">
+              <strong>Neumático delantero </strong> {motoSeleccionada.neumaticoDelantero}
+            </div>
+            <div className="c1">
+              <strong>Neumático trasero </strong> {motoSeleccionada.neumaticoTrasero}
+            </div>
+          </div>
+
+          <div className="divCaract">
+            <div className="c1">
+              <strong>Combustible</strong> Nafta
+            </div>
+            <div className="c1">
+              <strong>Aceite</strong> Mineral
+            </div>
+          </div>
+
+          <div className="divCaract">
+            <div className="c1">
+              <strong>Suspensión Delantera</strong> {motoSeleccionada.suspensionDelantera}
+            
+            </div>
+            <div className="c1">
+              <strong>Suspensión Trasera </strong>  {motoSeleccionada.suspensionTrasera}
+            </div>
           </div>
         </div>
-
-            <div className="divCaract">
-          <div className="c1">
-            <strong>Combustible</strong> Nafta
-          </div>
-          <div className="c1">
-            <strong>Aceite</strong> Mineral
-          </div>
-        </div>
-
-         <div className="divCaract">
-          <div className="c1">
-            <strong>Suspensión Delantera</strong> Horquilla telescópica anti fricción
-          </div>
-          <div className="c1">
-            <strong>Suspensión Trasera </strong> Monoamortiguador Nitrox
-          </div>
-        </div>
-
-       
-
       </div>
-       
-      </div>
 
-      {!enviado?(
-        
-        <button className="btnContacto" onClick={recibirAsesoramiento}>Recibir asesoramiento</button>
-      ):(
-        <>
-           <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              duration: 0.4,
-              scale: { type: "spring", visualDuration: 0.4  },
-            }}
-            className="conteinerAnimation"
-         
-            >
-     
-            <p  className="llamada">En breve recibirás una llamada al siguiente número 112342</p>
-        </motion.div>
-
-          </>
-      )
-    }
-
- </div>
+      {!enviado && (
+        <button className="btnContacto" onClick={recibirAsesoramiento}>
+          Recibir asesoramiento
+        </button>
+      ) }
+    </div>
   );
 }

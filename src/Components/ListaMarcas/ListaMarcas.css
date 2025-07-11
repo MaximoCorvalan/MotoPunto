@@ -4,7 +4,7 @@
 
   margin: 0;
   background-color: #0e0809;
-  height: 50px;
+  height: 58px;
     grid-area:marcas;
   display:  flex;
   flex-direction:  row;
@@ -14,13 +14,13 @@
 }
 .marca-tab {
   position: relative;
-  padding: 10px 20px;
+  padding: 15px 24px;
   cursor: pointer;
   color: white;
-
+  font-weight: bold;
   overflow: hidden;
   font-family: sans-serif;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .marca-tab:hover {

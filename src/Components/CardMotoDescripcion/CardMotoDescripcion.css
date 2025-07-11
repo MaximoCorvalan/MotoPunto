@@ -2,7 +2,7 @@
 {
   height: 45vh;
   display: flex;
-  width: 55vw;
+  width: 56vw;
   box-sizing: border-box;
 
   align-items: center;
@@ -11,39 +11,96 @@
 
 
 }
+.conteinerImgMoto
+{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-content: space-evenly;
+  gap: 15px;
+ 
+
+ 
+}
+.contFotos
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+
+
+ 
+
+}
 .imgMotoDes
 {
   border: 1px solid black;
   height: 30vh;
   width: 20vw;
   margin-left: 20px;
+  margin-top: 45px;
+  object-fit:cover;
+  background-color: white;
   
 
+}
+.contImg
+{    object-fit: cover;
+height: 100%;
+width: 100%;
+}
+.cuadro {
+  width: 20%;
+  height: 47px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid black;
+  cursor: pointer;
+  
+
+  border-radius: 5px;
 }
 .conteinerImagen
 {
   display: flex;
   flex-direction: column;
 
+}
 
+/* Tamaño más chico para el SweetAlert */
+.swal2-popup.mi-alerta-custom {
+  width: 300px !important;
+  font-size: 14px;
+}
 
+/* Botón rojo personalizado */
+.swal2-confirm.mi-boton-rojo {
+  background-color: red !important;
+  color: white !important;
+  border: none;
+  font-weight: bold;
+  padding: 8px 18px;
+  border-radius: 5px;
+}
 
-
-
+.swal2-confirm.mi-boton-rojo:hover {
+  background-color: darkred !important;
 }
 .conteinerMotoParent
 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 53vh;
+  height: 54vh;
 }
 .btnContacto
 {
   width: 30%;
   padding: 10px;
   color: white;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  
    background-color:#7c0a0a;;
   border: none;
  
@@ -76,18 +133,7 @@ overflow-y: auto;
   width: 70%;
 
 }
-.llamada
-{
-  background-color: rgb(122, 175, 42);
 
-  box-sizing: border-box;
-  padding: 5px;
-  color: white;
-
-
-  border: none;
- 
-}
 .conteinerAnimation
 { max-width :70%;
    box-sizing: border-box;

@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { BrowserRouter } from "react-router-dom";
 import './App.css'
 
-import ViewMain from './Pages/viewMain';
+import ViewMain from './Pages/ViewMain';
 
 function App() {
   const [count, setCount] = useState(0)

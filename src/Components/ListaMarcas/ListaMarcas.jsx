@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import "../ListaMarcas/ListaMarcas.css";
 
 export default function ListaMarcas() {
-  const tabs = ["HONDA", "KAWASAKI", "BAJAJ", "GILERA", "CORVEN", "HERO", "TODOS"];
+  const tabs = ["HONDA", "KAWASAKI", "BAJAJ", "KYMCO", "SUSUKI", "HERO", "TODOS"];
   const [activeTab, setActiveTab] = useState("TODOS");
 
   return (

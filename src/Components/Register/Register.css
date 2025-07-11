@@ -1,0 +1,39 @@
+.conteinerRegister
+{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contItem {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+
+}
+.contItem input
+{
+    padding: 6px;
+    border-radius: 10px;
+    outline: none;
+    border:  1px solid black;
+    
+}
+
+.btn {
+  display: flex;
+  margin: auto; /* Esto lo centra horizontalmente */
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color:#7c0a0a;;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color:#923f3f;;
+}

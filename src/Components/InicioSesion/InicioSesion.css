@@ -9,8 +9,8 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 17vw;
-    padding: 20px;
+    width: 18vw;
+    padding: 25px;
    
 
 }
@@ -26,18 +26,20 @@
 {
     margin-top: 10px;
     display:  flex;
+
     flex-direction: column;
     gap:10px
 }
 .insert input
 {
+    padding: 4px;
     width: 100%;
      outline: none;
 }
 .btnInciarSesion
 {
     margin-top: 15px;
-    padding: 10px;
+    padding: 14px;
     outline: none;
     border: none;
     color: white;

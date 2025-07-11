@@ -24,7 +24,7 @@
 main {
   grid-area: main;
   display: flex;
-   height: 77vh;
+   height: 76vh;
 }
 
 @media screen and (max-width: 1605px) {

@@ -2,20 +2,26 @@ import "../Filtros/Filtros.css";
 
 import { useState } from "react";
 import Contador from "../ContadorAnimado/Contador"
-import { useEffect } from "react";
+
+import { useMotos } from "../../Context/ContextMoto";
+import { parse } from "@fortawesome/fontawesome-svg-core";
+
 export default function Filtros() {
+const { setFiltroPrecio,SetFiltroCilindrada, setFiltroMarca } = useMotos();
+
   const [open, setOpen] = useState(false);
   const [openTipoMoto,setOpenTipoMoto]=useState(false);
+
   const [seleccion, setSeleccion] = useState(" ");
 const [seleccionMoto, setSeleccionMoto] = useState(" ");
   const opcionesCilindrada = [
-    "125cc",
-    "150cc",
-    "200cc",
-    "250cc",
-    "300cc",
-    "400cc",
-    "500cc",
+    "125",
+    "150",
+    "200",
+    "250",
+    "300",
+    "400",
+    "500",
   ];
   const opcinesTipoMoto = ["Enduro", "Naked", "Scooters"];
 
@@ -24,10 +30,15 @@ const [seleccionMoto, setSeleccionMoto] = useState(" ");
   const seleccionarOpcionMoto = (opcion) => {
     setSeleccionMoto(opcion);
     setOpenTipoMoto(false);
+
+
   };
   const seleccionarOpcion = (opcion) => {
     setSeleccion(opcion);
     setOpen(false);
+
+    SetFiltroCilindrada( opcion);
+
   };
 
   
@@ -62,7 +73,7 @@ const [seleccionMoto, setSeleccionMoto] = useState(" ");
                     onClick={() => seleccionarOpcion(opcion)}
                     className="option-item"
                   >
-                    {opcion}
+                    {opcion}cc
                   </div>
                 ))}
               </div>

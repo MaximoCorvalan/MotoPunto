@@ -4,7 +4,7 @@ import '../CardMoto/CardMoto.css'
 
 
 
-export default function CardMoto({onclick})
+export default function CardMoto({onclick, moto,key})
 { 
 
   
@@ -20,11 +20,11 @@ export default function CardMoto({onclick})
       onClick={onclick}       // duración de animación
  
     >
-      <img src="https://static.eldiario.es/clip/a5255f69-2560-4030-b42f-b301f981b1e3_16-9-discover-aspect-ratio_default_0.jpg" className="imgMoto" alt="" />
+      <img src={moto.image[0]} className="imgMoto" alt="" />
       <div className='caracteristicasConteiner'>
-      <p>KAWASAKI</p>
-      <p> H2R </p>
-      <p>1$</p>
+      <p>{moto.marca}</p>
+      <p> {moto.modelo} </p>
+      <p>${moto.precio}</p>
       </div>
 
    
