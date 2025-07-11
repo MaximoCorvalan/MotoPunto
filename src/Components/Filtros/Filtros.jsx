@@ -36,7 +36,8 @@ const [seleccionMoto, setSeleccionMoto] = useState(" ");
   const seleccionarOpcion = (opcion) => {
     setSeleccion(opcion);
     setOpen(false);
-
+ 
+  
     SetFiltroCilindrada( opcion);
 
   };

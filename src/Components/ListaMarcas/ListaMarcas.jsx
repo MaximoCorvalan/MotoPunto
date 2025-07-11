@@ -1,10 +1,21 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "../ListaMarcas/ListaMarcas.css";
+import { useMotos } from "../../Context/ContextMoto";
+
 
 export default function ListaMarcas() {
-  const tabs = ["HONDA", "KAWASAKI", "BAJAJ", "KYMCO", "SUSUKI", "HERO", "TODOS"];
+  const tabs = ["HONDA", "KAWASAKI", "BAJAJ", "KYMCO", "SUZUKI", "HERO", "TODOS"];
   const [activeTab, setActiveTab] = useState("TODOS");
+  const {SetFiltroMarca} =useMotos()
+
+  function establecerMarca(tab)
+  {
+    setActiveTab(tab);
+    SetFiltroMarca(tab)
+
+
+  }
 
   return (
     <ul className="ConteinerMarcas">
@@ -12,7 +23,7 @@ export default function ListaMarcas() {
         <li
           key={tab}
           className={`marca-tab ${activeTab === tab ? "active" : ""}`}
-          onClick={() => setActiveTab(tab)}
+          onClick={() => establecerMarca(tab)}
         >
           {activeTab === tab && (
             <motion.div

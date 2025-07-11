@@ -11,9 +11,9 @@
 
 
   width: 100vw;
-  margin-left: 13px;
 
 
+  place-items: center; 
   display: grid;
  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 15px; /* espacio entre columnas/filas */

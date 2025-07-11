@@ -16,14 +16,14 @@ const [FiltroCilindrada,SetFiltroCilindrada] =useState(null)
 const [FiltroMarca,SetFiltroMarca] = useState(null)
 
 useEffect(()=>{
-     setMotos(data.moto)
-    let motosF = motos
+    
+     let motosF = data.moto; 
 
-  if (FiltroCilindrada) {
-  const filtro = FiltroCilindrada.toString().toLowerCase().trim();
-  motosF = motosF.filter(m => m.modelo.toString().toLowerCase().trim().includes(filtro));
+if (FiltroCilindrada) {
+  motosF = motosF.filter(moto => 
+    moto.modelo.trim().includes(FiltroCilindrada.toString().trim())
+  );
 }
-
 
 
          if (FiltroPrecio)
@@ -31,10 +31,14 @@ useEffect(()=>{
 
             }if(FiltroMarca)
                     {
+                    
+                   motosF=   motosF.filter(moto=>{
+                      return  moto.marca.trim().toUpperCase().includes(FiltroMarca.toString().trim().toUpperCase());
+                      })
 
                     }
 
-                    if(motosF.length==0)
+                    if(motosF.length==0 || FiltroMarca=="TODOS")
                       {
                            setMotos(data.moto)
                       }else
