@@ -1,49 +1,82 @@
-import React, { use } from "react"
-import './NavBar.css'
-import logo from '../../assets/img/Logo2.png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
-import { NavLink } from "react-router-dom";
+import React, { use, useEffect } from "react";
+import "./NavBar.css";
+import logo from "../../assets/img/Logo2.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faL, faRightToBracket } from "@fortawesome/free-solid-svg-icons";
 import DialogCont from "../DialogCont/DialogCont";
 import { useState } from "react";
 import InicioSesion from "../InicioSesion/InicioSesion";
-
+import Autocomplete from "@mui/joy/Autocomplete";
+import Input from "@mui/joy/Input";
+import { useMotos } from '../../Context/ContextMoto';
+import { m } from "framer-motion";
+import CardMotoDescripcion from "../CardMotoDescripcion/CardMotoDescripcion";
 function NavBar() {
-  
   const [modalAbierto, setModalAbierto] = useState(false);
- 
-  const moto = {
-  marca: "Yamaha",
-  modelo: "MT-03",
-  año: 2022
-};
+  const [modalAbiertoLogin, setModalAbiertoLogin] = useState(false);
+ const {motos} = useMotos()
 
+  const [motoSeleccionada, setMotoSeleccionada] = useState(null);
+
+  const abrirModal = (moto) => {
+    setMotoSeleccionada(moto);
+    setModalAbierto(true);
+ 
+
+  };
+
+  const cerrarModal = () => {
+    setModalAbierto(false);
+    setMotoSeleccionada(null);
+    setModalAbierto(fals)
+
+  };
   return (
     <>
-          <nav>
+      <nav>
+        <img src={logo} className="logo" alt="Logo" />
 
-                <img src={logo} className="logo" alt="Logo" />
+           <Autocomplete
+        placeholder="Busque su moto"
+        className="inputNavbar"
+          variant="plain"
+          slotProps={{ listbox: { variant: "outlined" } }}
+               options={motos.map((m)=>m.modelo)}
+               onChange={(event, newValue) => {
+               if (newValue) {
+    const motoSelect = motos.find(mot => mot.modelo === newValue);
+    abrirModal(motoSelect); 
+  }
+  }}
+        />
 
-                <input  className ="inutNavbar" type="text" name="" id="" placeholder="Motos" />
-             <ul>
+        <ul>
+          <FontAwesomeIcon
+            icon={faRightToBracket}
+            style={{ color: "white", fontSize: "18px" }}
+          />
 
-             <FontAwesomeIcon icon={faRightToBracket} style={{ color: 'white', fontSize: '18px' }} />
-
-
-                <li className="iniciarSesionLbl" > <a onClick={()=>setModalAbierto(true)}>Iniciar sesion</a></li>
-            
-            </ul>
-            {modalAbierto&&(
-            <DialogCont isOpen={modalAbierto} onClose={()=>setModalAbierto(false)} children={<InicioSesion/>}/>
-            )}
-
-      
-           
-            
-
-           </nav>
+          <li className="iniciarSesionLbl">
+            {" "}
+            <a onClick={() => setModalAbiertoLogin(true)}>Iniciar sesion</a>
+          </li>
+        </ul>
+        {modalAbierto?  (
+          <DialogCont
+            isOpen={modalAbierto}
+            onClose={() => setModalAbierto(false)}
+            children={<CardMotoDescripcion onClose={cerrarModal} motoSeleccionada={motoSeleccionada}></CardMotoDescripcion>}
+          />
+        ):modalAbiertoLogin?(
+           <DialogCont
+            isOpen={modalAbiertoLogin}
+            onClose={() => setModalAbiertoLogin(false)}
+            children={<InicioSesion onClose={cerrarModal}></InicioSesion>}
+          />
+        ):null}
+      </nav>
     </>
-  )
+  );
 }
 
-export default NavBar
+export default NavBar;

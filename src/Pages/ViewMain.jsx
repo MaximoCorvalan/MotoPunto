@@ -6,16 +6,26 @@ import ListaMarcas from "../Components/ListaMarcas/ListaMarcas";
 import NavBar from "../Components/Header/Navbar";
 import Footer from "../Components/Footer/Footer";
 import '../Pages/viewMain.css'
-import ContextMoto from "../Context/ContextMoto";
+import { useMotos } from '../Context/ContextMoto';
+
+
+
+
 
 
 
 
 export default function ViewMain() {
+
+const { tipoUsuario } = useMotos();
+alert(tipoUsuario);
+
+
+
     return (
    
 
-         <ContextMoto>
+
 
         <div className="layout">
 
@@ -23,18 +33,28 @@ export default function ViewMain() {
            
 
               <ListaMarcas></ListaMarcas>
-         
+
+              {tipoUsuario===""?(
+              
                 <Filtros></Filtros>
+             
+              ):null}
+
             <main>
             
 
               <div className="conteinerMain">
+                {tipoUsuario===""?(
               <Routes>
+
+                  <Route path="" element={<Navigate to="/MotoPunto"  />} />
+                  <Route path="/MotoPunto" element={<ListaMotos />} />
+                  
+               
            
-                 <Route path="" element={<Navigate to="/MotoPunto"  />} />
-                 <Route path="/MotoPunto" element={<ListaMotos />} />
         
               </Routes>
+                ):(<h1>LISTA CON LOS USUARIO POR ATENDER</h1>)}
               </div>
             </main>
 
@@ -42,7 +62,7 @@ export default function ViewMain() {
         </div>
 
 
-         </ContextMoto>
+   
 
     
     );

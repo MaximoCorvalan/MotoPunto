@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "../ListaMarcas/ListaMarcas.css";
 import { useMotos } from "../../Context/ContextMoto";
+import { useEffect } from "react";
 
 
 export default function ListaMarcas() {
   const tabs = ["HONDA", "KAWASAKI", "BAJAJ", "KYMCO", "SUZUKI", "HERO", "TODOS"];
   const [activeTab, setActiveTab] = useState("TODOS");
-  const {SetFiltroMarca} =useMotos()
+  const {SetFiltroMarca,FiltroMarca} =useMotos()
 
   function establecerMarca(tab)
   {
@@ -16,6 +17,14 @@ export default function ListaMarcas() {
 
 
   }
+  useEffect(()=>{
+    if(FiltroMarca===null)
+      {
+
+        setActiveTab("TODOS");
+      }
+
+  },[FiltroMarca])
 
   return (
     <ul className="ConteinerMarcas">

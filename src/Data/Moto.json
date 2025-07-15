@@ -5,6 +5,7 @@
       "modelo": "Ninja H2R",
       "motor": "4 cilindros en línea supercargado DOHC 16 válvulas",
       "cilindrada": "998",
+      "tipoMoto":"Naked",
       "potencia": "326hp @14000rpm (con ram air) / 310 hp nominal",
       "torque": "165Nm @12500rpm",
       "alimentacion": "Inyección electrónica DFI® + supercargador",
@@ -57,6 +58,7 @@
    
     {
       "marca": "Suzuki",
+      "tipoMoto":"Naked",
       "modelo": "GSX250R",
       "motor": "2/cilindros paralelos DOHC 4/válvulas",
       "cilindrada": "248",
@@ -83,6 +85,7 @@
     {
       "marca": "Kymco",
       "modelo": "Agility 125",
+      "tipoMoto":"Scooters",
       "motor": "1/cilindro 2/tiempos con válvula de láminas",
       "cilindrada": "249",
       "potencia": "38hp @7500rpm",
@@ -93,7 +96,7 @@
       "transmision": "Cadena",
       "cajaDeCambio": "5 velocidades",
       "iluminacion": "Halógena",
-      "capacidadTanque": "~15L",
+      "capacidadTanque": "15L",
       "neumaticoDelantero": "—",
       "neumaticoTrasero": "—",
       "suspensionDelantera": "Horquilla Marzocchi 38mm",
@@ -109,6 +112,7 @@
     {
       "marca": "Hero",
       "modelo": "Hunk 150",
+      "tipoMoto":"Naked",
       "motor": "1/cilindro OHC 2/válvulas",
       "cilindrada": "149.2",
       "potencia": "14.4PS @8500rpm (~14.1hp)",
@@ -136,6 +140,7 @@
     {
       "marca": "Bajaj",
       "modelo": "Pulsar N250",
+      "tipoMoto":"Naked",
       "motor": "1/cilindro SOHC 2/válvulas, aceite enfriado",
       "cilindrada": "249",
       "potencia": "24.5PS @8750rpm (~24.1hp)",
@@ -164,6 +169,7 @@
     {
       "marca": "Kawasaki",
       "modelo": "Z900",
+      "tipoMoto":"Naked",
       "motor": "4/cilindros en línea DOHC 16/válvulas",
       "cilindrada": "948",
       "potencia": "125hp @9500rpm",
@@ -191,6 +197,7 @@
     {
       "marca": "Honda",
       "modelo": "CB500X",
+      "tipoMoto":"Naked",
       "motor": "2/cilindros en línea DOHC 8/válvulas",
       "cilindrada": "471",
       "potencia": "47.6hp @8600rpm",
@@ -218,6 +225,7 @@
     {
       "marca": "Kymco",
       "modelo": "AK 550",
+      "tipoMoto":"Scooters",
       "motor": "2/cilindros en línea DOHC 8/válvulas",
       "cilindrada": "550.4",
       "potencia": "51hp @7500rpm",
@@ -245,6 +253,7 @@
    {
   "marca": "Suzuki",
   "modelo": "Gixxer 150",
+  "tipoMoto":"Naked",
   "motor": "Monocilíndrico SOHC 2/válvulas",
   "cilindrada": "155",
   "potencia": "13.6hp @8000rpm",
@@ -271,6 +280,7 @@
     {
       "marca": "Hero",
       "modelo": "Xpulse 200",
+      "tipoMoto":"Enduro",
       "motor": "1/cilindro OHC 2/válvulas",
       "cilindrada": "199.6",
       "potencia": "18.1hp @8500rpm",
@@ -298,6 +308,7 @@
     {
       "marca": "Bajaj",
       "modelo": "Avenger Street 160",
+      "tipoMoto":"Naked",
       "motor": "1/cilindro SOHC 2/válvulas",
       "cilindrada": "160",
       "potencia": "15PS @8500rpm (~14.7hp)",
@@ -327,6 +338,7 @@
   {
     "marca": "Honda",
     "modelo": "CB300F Twister",
+    "tipoMoto":"Naked",
     "motor": "Monocilíndrico DOHC 4/válvulas",
     "cilindrada": "293",
     "potencia": "24.5hp @7500rpm",
@@ -353,6 +365,7 @@
   {
     "marca": "Honda",
     "modelo": "Wave 110S",
+        "tipoMoto":"Scooters",
     "motor": "Monocilíndrico OHC 2/válvulas",
     "cilindrada": "109",
     "potencia": "8.3hp @7500rpm",
@@ -379,6 +392,7 @@
    {
     "marca": "Bajaj",
     "modelo": "Pulsar NS200",
+        "tipoMoto":"Naked",
     "motor": "Monocilíndrico SOHC 4/válvulas",
     "cilindrada": "199.5",
     "potencia": "24.5hp @9750rpm",
@@ -404,6 +418,7 @@
   } ,{
     "marca": "Honda",
     "modelo": "XR190L",
+        "tipoMoto":"Enduro",
     "motor": "Monocilíndrico OHC 2/válvulas",
     "cilindrada": "184",
     "potencia": "15.6hp @8500rpm",
@@ -430,6 +445,7 @@
   {
     "marca": "Bajaj",
     "modelo": "Dominar 400",
+        "tipoMoto":"Naked",
     "motor": "Monocilíndrico DOHC 4/válvulas",
     "cilindrada": "373",
     "potencia": "40hp @8650rpm",
@@ -455,6 +471,7 @@
   }, {
     "marca": "Honda",
     "modelo": "GLH150",
+        "tipoMoto":"Naked",
     "motor": "Monocilíndrico OHC 2/válvulas",
     "cilindrada": "149",
     "potencia": "12.4hp @8000rpm",
@@ -477,6 +494,156 @@
       "https://aspenmotos.com/wp-content/uploads/2025/02/GLH-150-GRIS.png",
       "https://aspenmotos.com/wp-content/uploads/2023/07/GLH-150-14.png"
     ]
+  },{
+  "marca": "Honda",
+  "modelo": "XR 150L",
+  "tipoMoto": "Enduro",
+  "motor": "Monocilíndrico 4T OHC",
+  "cilindrada": "149.1 cc",
+  "potencia": "12.8 hp @ 8000 rpm",
+  "torque": "12.5 Nm @ 6000 rpm",
+  "alimentacion": "Inyección electrónica (PGM-FI)",
+  "refrigeracion": "Aire",
+  "encendido": "Digital CDI",
+  "transmision": "Cadena",
+  "cajaDeCambio": "5 velocidades",
+  "iluminacion": "LED (faros)",
+  "capacidadTanque": "12.8 L",
+  "neumaticoDelantero": "80/100-21",
+  "neumaticoTrasero": "100/100-18",
+  "suspensionDelantera": "Horquilla telescópica",
+  "suspensionTrasera": "Monoamortiguador",
+  "peso": "128 kg",
+  "precio": "2800",
+  "image": [
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNE_cv0NKqd0D3PyJPdo5UBwNfZM_zlAf8hsRwibVn6j-eW930BVwTYGwXVQ2_CGB1J8Q&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmhHOEQK0tRQJfWNXdO-4NTs30lJ1cp7YuAUz_WaD_N6vyoVLwbPa59PHLWnP99zF3vWs&usqp=CAU",
+    "https://images.unomotos.com.ar/unomotos/motos/honda_xr_150_l_2019_6.png"
+  ]
+},{
+  "marca": "Kawasaki",
+  "modelo": "KLX 150",
+  "tipoMoto": "Enduro",
+  "motor": "Monocilíndrico 4T SOHC",
+  "cilindrada": "144 cc",
+  "potencia": "11.3 hp @ 8000 rpm",
+  "torque": "11.7 Nm @ 6500 rpm",
+  "alimentacion": "Carburador",
+  "refrigeracion": "Aire",
+  "encendido": "CDI",
+  "transmision": "Cadena",
+  "cajaDeCambio": "5 velocidades",
+  "iluminacion": "Halógena",
+  "capacidadTanque": "7.7 L",
+  "neumaticoDelantero": "70/100-19",
+  "neumaticoTrasero": "90/100-16",
+  "suspensionDelantera": "Horquilla telescópica",
+  "suspensionTrasera": "Monoamortiguador",
+  "peso": "126 kg",
+  "precio": "2600",
+  "image": [
+    "https://content2.kawasaki.com/ContentStorage/KMA/Products/12071/4589b1ea-5a61-4716-8f7e-66b8af3baf36.png?w=767",
+    "https://progreser.com/wp-content/uploads/2020/12/KLX-150J-Kawasaki-Verde-Motos-Zoom-ProgreSER.jpg",
+    "https://img.icarcdn.com/mobil123-news/body/64276-harga-klx150-bekas-in-sx.jpg"
+  ]
+},{
+  "marca": "Suzuki",
+  "modelo": "DR-Z400S",
+  "tipoMoto": "Enduro",
+  "motor": "Monocilíndrico 4T DOHC",
+  "cilindrada": "398 cc",
+  "potencia": "39 hp @ 8000 rpm",
+  "torque": "40 Nm @ 6500 rpm",
+  "alimentacion": "Carburador Mikuni",
+  "refrigeracion": "Líquida",
+  "encendido": "CDI",
+  "transmision": "Cadena",
+  "cajaDeCambio": "5 velocidades",
+  "iluminacion": "Halógena",
+  "capacidadTanque": "10 L",
+  "neumaticoDelantero": "80/100-21",
+  "neumaticoTrasero": "120/90-18",
+  "suspensionDelantera": "Horquilla telescópica invertida",
+  "suspensionTrasera": "Monoamortiguador",
+  "peso": "145 kg",
+  "precio": "5500",
+  "image": [
+    "https://www.motorevistacr.com/wp-content/uploads/2021/02/Ficha-Tecnica-Suzuki-DR-Z400S-2021.jpg.webp",
+    "https://comprarmoto.com.ar/wp-content/uploads/2024/04/suzuki_drz_400_2.jpg"
+  ]
+},{
+  "marca": "Hero",
+  "modelo": "Xpulse 200T",
+  "tipoMoto": "Enduro/Trail",
+  "motor": "Monocilíndrico 4T OHC",
+  "cilindrada": "199.6 cc",
+  "potencia": "18.1 hp @ 8000 rpm",
+  "torque": "17.1 Nm @ 6500 rpm",
+  "alimentacion": "Inyección electrónica",
+  "refrigeracion": "Aire y aceite",
+  "encendido": "Digital",
+  "transmision": "Cadena",
+  "cajaDeCambio": "5 velocidades",
+  "iluminacion": "LED",
+  "capacidadTanque": "13 L",
+  "neumaticoDelantero": "90/90-21",
+  "neumaticoTrasero": "120/80-18",
+  "suspensionDelantera": "Horquilla telescópica",
+  "suspensionTrasera": "Monoamortiguador",
+  "peso": "158 kg",
+  "precio": "2600",
+  "image": [
+    "https://ss-static-001.esmsv.com/r/content/host1/614a254f06ba2a7821c0886c0eb1422c//img/products/BWZOc0ymXH.webp",
+    "https://images.tractorjunction.com/6_XPULSE_200_T_4_V_red_ccbad3ed4e.png?format=webp&quality=40"
+  ]
+}, {
+    "marca": "Honda",
+    "modelo": "CRF300L",
+    "tipoMoto": "Enduro/Dual‑Sport",
+    "motor": "Monocilíndrico DOHC 4 válvulas",
+    "cilindrada": "286",
+    "potencia": "27hp @8500 rpm",
+    "torque": "26.6Nm @6500 rpm",
+    "alimentacion": "Inyección electrónica PGM‑FI",
+    "refrigeracion": "Líquida",
+    "encendido": "Digital CDI",
+    "transmision": "Cadena",
+    "cajaDeCambio": "6 velocidades",
+    "iluminacion": "LED",
+    "capacidadTanque": "7.9L (2.1gal con reserva)",
+    "neumaticoDelantero": "80/10021",
+    "neumaticoTrasero": "120/8018",
+    "suspensionDelantera": "Horquilla invertida 43 mm, 10.2″ recorrido",
+    "suspensionTrasera": "Monoamortiguador Pro‑Link, 10.2″ recorrido",
+    "peso": "141 kg (casi 311 lb) :contentReference[oaicite:2]{index=2}",
+    "precio": "5750",
+      "image": ["https://soymotero.net/wp-content/uploads/2024/12/Honda-CRF300L-2025-1.jpg",
+    "https://www.honda.es/content/dam/central/motorcycles/colour-picker/adventure/crf300l/crf300l_2025/r-292r_extreme_red/25YM_CRF300L_EXTREME-RED_R-292R_RHS.png/jcr:content/renditions/m_r.png",
+    "https://hondacenter.cl/wp-content/uploads/2019/04/4_a66bd863-889e-46c2-941e-773ac34d263c_1024x1024.png"]
+  } ,{
+    "marca": "Honda",
+    "modelo": "XR125L",
+    "tipoMoto": "Trail/Enduro",
+    "motor": "Monocilíndrico OHC 2 válvulas",
+    "cilindrada": "124 cc",
+    "potencia": "≈14.6 hp @8500 rpm",
+    "torque": "≈10.4 Nm @6500 rpm",
+    "alimentacion": "Carburador PD 20 mm",
+    "refrigeracion": "Aire",
+    "encendido": "CDI digital",
+    "transmision": "Cadena",
+    "cajaDeCambio": "5 velocidades",
+    "iluminacion": "Halógena (modelo calle)",
+    "capacidadTanque": "≈12 L",
+    "neumaticoDelantero": "90/90‑19",
+    "neumaticoTrasero": "110/90‑17",
+    "suspensionDelantera": "Horquilla telescópica 31 mm, 180 mm recorrido",
+    "suspensionTrasera": "Mono‑amortiguador 160 mm recorrido",
+    "peso": "≈115.5 kg (seco)",
+    "precio": "5200",
+    "image": ["https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhb3S_xAjzRA83Abs0915gFjQxKJXma2vcjN-uphD0yji2Ewteqx3k9wFNGWA03MPrDc9JFzHg6ocknw299C_vzjdhoJsN_oLV6MOTMqGxXYevc-ztEk5ghWZqkTTc0G6lnUukcgorshD8/s1600/Honda+XR+150+N.png"]
+
+   
   }
 ]
 

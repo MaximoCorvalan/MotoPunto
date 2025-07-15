@@ -1,16 +1,18 @@
 import "../Filtros/Filtros.css";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Contador from "../ContadorAnimado/Contador"
 
 import { useMotos } from "../../Context/ContextMoto";
 import { parse } from "@fortawesome/fontawesome-svg-core";
+import { useEffectl } from "react";
 
 export default function Filtros() {
-const { setFiltroPrecio,SetFiltroCilindrada, setFiltroMarca } = useMotos();
+const { setFiltroPrecio,SetFiltroCilindrada, FiltroCilindrada,FiltroMarca ,FiltroPrecio} = useMotos();
 
   const [open, setOpen] = useState(false);
   const [openTipoMoto,setOpenTipoMoto]=useState(false);
+
 
   const [seleccion, setSeleccion] = useState(" ");
 const [seleccionMoto, setSeleccionMoto] = useState(" ");
@@ -41,6 +43,18 @@ const [seleccionMoto, setSeleccionMoto] = useState(" ");
     SetFiltroCilindrada( opcion);
 
   };
+useEffect(() => {
+  if (FiltroCilindrada === null) {
+    setSeleccion(" "); 
+  }
+  if (FiltroMarca === null) {
+    setSeleccionMoto(" "); 
+  }
+
+
+
+ 
+}, [FiltroCilindrada, FiltroMarca, FiltroPrecio]);
 
   
   return (
@@ -116,9 +130,23 @@ const [seleccionMoto, setSeleccionMoto] = useState(" ");
         <div className="conteinerFiltroPrecio">
           <p  className="decoLabel">Precio Maximo</p>
           <input
+          id="input"
             placeholder="100000.00"
             className="InputPrecio"
-           
+            value={FiltroPrecio}
+      
+          onChange={(e) =>{
+             const valor = parseFloat(e.target.value);
+             
+                if (!isNaN(valor) ) {
+                 setFiltroPrecio(valor);
+  
+                    }else
+                      {
+                        setFiltroPrecio("")
+                      }
+            }}
+
             type="text"
           />
         </div>

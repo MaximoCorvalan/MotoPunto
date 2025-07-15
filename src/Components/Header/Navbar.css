@@ -23,11 +23,12 @@ nav {
     cursor: pointer;
   
 }
-.inutNavbar
+
+.inputNavbar
 { 
   border-radius: 10px;
-  padding: 7px;
-  width: 30vw;
+  padding: 2px;
+  width: 35vw;
   outline: none;
   border:  none;
   box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1);
