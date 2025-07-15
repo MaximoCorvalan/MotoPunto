@@ -1,0 +1,172 @@
+{
+  "UsuariosInteresados": [
+    {
+      "nombre": "Jond Doue",
+      "Número": 11232332,
+      "Dirección": "LAS HERAS 111",
+      "FechaConsulta": "11/07/2025",
+      "Estado": "Activo",
+      "MotoInteresada": "GLH 150",
+      "email": "Hola@gmail.com"
+    },
+    {
+      "nombre": "María Pérez",
+      "Número": 11345678,
+      "Dirección": "SAN MARTÍN 234",
+      "FechaConsulta": "10/07/2025",
+      "Estado": "Pendiente",
+       "MotoInteresada": "GLH 150",
+      "email": "maria.perez@example.com"
+    },
+    {
+      "nombre": "Carlos García",
+      "Número": 11456789,
+      "Dirección": "AV. CÓRDOBA 987",
+      "FechaConsulta": "12/07/2025",
+      "Estado": "Activo",
+      "MotoInteresada": "XR 150L",
+      "email": "carlosg@gmail.com"
+    },
+    {
+      "nombre": "Lucía Romero",
+      "Número": 11987654,
+      "Dirección": "BELGRANO 321",
+      "FechaConsulta": "13/07/2025",
+      "Estado": "Inactivo",
+         "MotoInteresada": "GLH 150",
+      "email": "lucia.romero@hotmail.com"
+    },
+    {
+      "nombre": "Pedro Fernández",
+      "Número": 11654321,
+      "Dirección": "RIVADAVIA 444",
+      "FechaConsulta": "14/07/2025",
+      "Estado": "Activo",
+      "MotoInteresada": "GLH 150",
+      "email": "pedro.f@correo.com"
+    },
+    {
+      "nombre": "Ana López",
+      "Número": 11881234,
+      "Dirección": "SARMIENTO 222",
+      "FechaConsulta": "10/07/2025",
+      "Estado": "Pendiente",
+       "MotoInteresada": "GLH 150",
+      "email": "ana.lopez@gmail.com"
+    },
+    {
+      "nombre": "Diego Marini",
+      "Número": 11776543,
+      "Dirección": "9 DE JULIO 876",
+      "FechaConsulta": "09/07/2025",
+      "Estado": "Inactivo",
+      "MotoInteresada": "GLH 150",
+      "email": "dmarini@correo.com"
+    },
+    {
+      "nombre": "Sofía Méndez",
+      "Número": 11823456,
+      "Dirección": "PERÓN 123",
+      "FechaConsulta": "08/07/2025",
+      "Estado": "Activo",
+      "MotoInteresada": "XR 190L",
+      "email": "sofia.m@gmail.com"
+    },
+    {
+      "nombre": "Gonzalo Ruiz",
+      "Número": 11567890,
+      "Dirección": "MITRE 555",
+      "FechaConsulta": "07/07/2025",
+      "Estado": "Activo",
+      "MotoInteresada": "GLH 150",
+      "email": "gonzalo.ruiz@example.com"
+    },
+    {
+      "nombre": "Natalia Herrera",
+      "Número": 11999887,
+      "Dirección": "ALSINA 999",
+      "FechaConsulta": "06/07/2025",
+      "Estado": "Pendiente",
+      "MotoInteresada": "CB 300F",
+      "email": "natalia.h@correo.com"
+    },
+    {
+      "nombre": "Tomás Aguirre",
+      "Número": 11876543,
+      "Dirección": "PUEYRREDÓN 432",
+      "FechaConsulta": "05/07/2025",
+      "Estado": "Activo",
+      "MotoInteresada": "GLH 150",
+      "email": "tomas.aguirre@gmail.com"
+    },
+    {
+      "nombre": "Camila Ríos",
+      "Número": 11765432,
+      "Dirección": "URQUIZA 765",
+      "FechaConsulta": "04/07/2025",
+      "Estado": "Inactivo",
+         "MotoInteresada": "GLH 150",
+      "email": "camila.rios@hotmail.com"
+    },
+    {
+      "nombre": "Matías Vera",
+      "Número": 11334455,
+      "Dirección": "YRIGOYEN 1111",
+      "FechaConsulta": "03/07/2025",
+      "Estado": "Pendiente",
+      "MotoInteresada": "XR 150L",
+      "email": "matiasv@correo.com"
+    },
+    {
+      "nombre": "Julieta Torres",
+      "Número": 11911122,
+      "Dirección": "MORENO 300",
+      "FechaConsulta": "02/07/2025",
+      "Estado": "Activo",
+        "MotoInteresada": "GLH 150",
+      "email": "julieta.torres@gmail.com"
+    },
+    {
+      "nombre": "Federico López",
+      "Número": 11678901,
+      "Dirección": "ALVEAR 654",
+      "FechaConsulta": "01/07/2025",
+      "Estado": "Activo",
+      "MotoInteresada": "XR 190L",
+      "email": "f.lopez@example.com"
+    },
+       {
+      "nombre": "Federico Alvear",
+      "Número": 116789401,
+      "Dirección": "conada 654",
+      "FechaConsulta": "01/07/2025",
+      "Estado": "Activo",
+      "MotoInteresada": "XR 190L",
+      "email": "f.lopez@example.com"
+    },   {
+      "nombre": "Federico López",
+      "Número": 11678901,
+      "Dirección": "ALVEAR 654",
+      "FechaConsulta": "01/07/2025",
+      "Estado": "Activo",
+      "MotoInteresada": "XR 190L",
+      "email": "f.lopez@example.com"
+    },   {
+      "nombre": "Federico López",
+      "Número": 11678901,
+      "Dirección": "ALVEAR 654",
+      "FechaConsulta": "01/07/2025",
+      "Estado": "Activo",
+      "MotoInteresada": "XR 190L",
+      "email": "f.lopez@example.com"
+    },   {
+      "nombre": "Federico López",
+      "Número": 11678901,
+      "Dirección": "ALVEAR 654",
+      "FechaConsulta": "01/07/2025",
+      "Estado": "Activo",
+      "MotoInteresada": "XR 190L",
+      "email": "f.lopez@example.com"
+    }
+  ]
+}

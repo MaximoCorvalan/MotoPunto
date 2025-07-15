@@ -7,6 +7,8 @@ import NavBar from "../Components/Header/Navbar";
 import Footer from "../Components/Footer/Footer";
 import '../Pages/viewMain.css'
 import { useMotos } from '../Context/ContextMoto';
+import Clientes from "../Components/Clientes/clientes";
+
 
 
 
@@ -17,9 +19,7 @@ import { useMotos } from '../Context/ContextMoto';
 
 export default function ViewMain() {
 
-const { tipoUsuario } = useMotos();
-alert(tipoUsuario);
-
+     const { tipoUsuario } = useMotos();
 
 
     return (
@@ -34,7 +34,7 @@ alert(tipoUsuario);
 
               <ListaMarcas></ListaMarcas>
 
-              {tipoUsuario===""?(
+              {tipoUsuario!=="Admin"?(
               
                 <Filtros></Filtros>
              
@@ -43,22 +43,22 @@ alert(tipoUsuario);
             <main>
             
 
-              <div className="conteinerMain">
-                {tipoUsuario===""?(
+              <div className={tipoUsuario ==="Admin"?"conteinerMainAdmin":"conteinerMain" }>
+            
               <Routes>
 
-                  <Route path="" element={<Navigate to="/MotoPunto"  />} />
+                  <Route path="" element={<Navigate to="/MotoPunto"/>} />
                   <Route path="/MotoPunto" element={<ListaMotos />} />
-                  
-               
-           
-        
+                  <Route path="/Administradores/AtencionUsuarios" element={<Clientes></Clientes>} />
               </Routes>
-                ):(<h1>LISTA CON LOS USUARIO POR ATENDER</h1>)}
+         
               </div>
             </main>
+               {tipoUsuario!=="Admin"?(            
+                 <Footer></Footer>
+                        
+              ):null}
 
-           <Footer></Footer>
         </div>
 
 

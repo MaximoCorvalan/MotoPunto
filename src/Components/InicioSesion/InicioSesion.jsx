@@ -3,18 +3,37 @@ import logo from "../../assets/img/Logoo.png";
 import "../InicioSesion/InicioSesion.css";
 import DialogCont from "../DialogCont/DialogCont";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useMotos } from "../../Context/ContextMoto";
+
 import Register from "../Register/Register";
 export default function InicioSesion({ onClose }) {
   const [registrarse,setRegister] = useState(false);
+  const navigate = useNavigate();
+  const {SetTipoUsuario,tipoUsuario} = useMotos()
+  function esAdmin(e)
+  {  
+     e.preventDefault();
+       const form = e.target;
+       const usuario = form.usuario.value;
+       const contrasena = form.contraseña.value;
 
+       if(usuario==="admin" && contrasena==="admin")
+        {
+          SetTipoUsuario("Admin")
+          alert(tipoUsuario)
+          navigate("/Administradores/AtencionUsuarios")
+
+        }
+     
+     
+     onClose();
+  }
 
   return (
     <>
       <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          onClose();
-        }}
+        onSubmit={esAdmin}
       >
         <div className="ConteinerLogin">
           <img className="LogoLogin" src={logo} alt="Logo MotoPunto" />

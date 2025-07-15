@@ -54,7 +54,7 @@ export default function ContextMoto({ children }) {
         motos,
         setFiltroPrecio,
         SetFiltroCilindrada,
-        SetFiltroMarca,FiltroPrecio,FiltroMarca,FiltroCilindrada,tipoUsuario
+        SetFiltroMarca,SetTipoUsuario,FiltroPrecio,FiltroMarca,FiltroCilindrada,tipoUsuario
       }}
     >
       {children}

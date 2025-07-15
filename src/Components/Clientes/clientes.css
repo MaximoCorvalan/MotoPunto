@@ -1,0 +1,32 @@
+.contTabla {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center; /* Centra horizontalmente el texto */
+}
+
+.contTabla th,
+.contTabla td {
+  padding: 10px;
+  border: 1px solid #6d6c6c;
+  text-align: center; /* Centra horizontalmente */
+  vertical-align: middle; /* Centra verticalmente */
+}
+
+.contTabla thead {
+  background-color: #6e1717;
+  font-weight: bold;
+  color: aliceblue;
+  font-size: 20px;
+}
+
+.btnAtender
+{
+    padding: 10px;
+    color: white;
+    background-color: rgb(143, 15, 15);
+}
+
+.btnAtender:hover
+{
+    background-color: rgb(182, 21, 21);
+}
