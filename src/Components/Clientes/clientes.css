@@ -23,6 +23,7 @@
 {
     padding: 10px;
     color: white;
+    border: 1px solid black;
     background-color: rgb(143, 15, 15);
 }
 
@@ -30,3 +31,4 @@
 {
     background-color: rgb(182, 21, 21);
 }
+

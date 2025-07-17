@@ -1,12 +1,15 @@
 import React from "react";
 import data from "../../Data/UsuariosInteresados.json";
+import { useMotos } from "../../Context/ContextMoto";
 
 import "../Clientes/clientes.css"
 export default function Clientes() {
-  const dataClientes = data.UsuariosInteresados;
+  const {usuarios} = useMotos()
+
 
   return (
     <>
+ 
       <table className="contTabla">
         <thead>
           <tr>
@@ -22,7 +25,7 @@ export default function Clientes() {
         </thead>
 
         <tbody>
-          {dataClientes.map((cliente, index) => {
+          {usuarios.map((cliente, index) => {
             const esActivo = cliente.Estado === "Activo";
 
             return (
@@ -34,7 +37,7 @@ export default function Clientes() {
                 <td>{cliente.email}</td>
                 <td>{cliente.MotoInteresada}</td>
                 <td>
-                  {esActivo ? <button className="btnAtender">ATENDER</button> : "ATENDIDO EL 12/7/2025"}
+                  {esActivo ? <button className="btnAtender">LLAMAR</button> : "REALIZADO  EL 12/7/2025"}
                 </td>
              
               </tr>

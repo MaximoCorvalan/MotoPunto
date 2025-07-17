@@ -1,4 +1,4 @@
-import { Routes, Route, NavLink,Navigate } from "react-router-dom";
+import { Routes, Route,Navigate } from "react-router-dom";
 import ListaMotos from '../Components/ListaMotos/ListaMotos'
 
 import Filtros from "../Components/Filtros/Filtros";
@@ -7,8 +7,8 @@ import NavBar from "../Components/Header/Navbar";
 import Footer from "../Components/Footer/Footer";
 import '../Pages/viewMain.css'
 import { useMotos } from '../Context/ContextMoto';
-import Clientes from "../Components/Clientes/clientes";
-
+import FiltroUsuario from "../Components/FiltroUsuarios/Filtrousuario";
+import Clientes from "../Components/Clientes/Clientes";
 
 
 
@@ -32,13 +32,14 @@ export default function ViewMain() {
             <NavBar></NavBar>
            
 
-              <ListaMarcas></ListaMarcas>
 
               {tipoUsuario!=="Admin"?(
-              
+                <>
+                <ListaMarcas></ListaMarcas>
                 <Filtros></Filtros>
+                </>
              
-              ):null}
+              ):(<FiltroUsuario></FiltroUsuario>)}
 
             <main>
             

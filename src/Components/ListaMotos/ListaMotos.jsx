@@ -28,7 +28,7 @@ const { motos } = useMotos();
     <>
       {motos.map((moto, index) => (
         <CardMoto
-          key={index}
+            key={ index}
           moto={moto}
           onclick={() => abrirModal(moto)}
         />

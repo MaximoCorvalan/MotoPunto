@@ -4,10 +4,10 @@ import '../CardMoto/CardMoto.css'
 
 
 
-export default function CardMoto({onclick, moto,key})
+export default function CardMoto({onclick, moto})
 { 
 
-  
+
   
   return (
     <>

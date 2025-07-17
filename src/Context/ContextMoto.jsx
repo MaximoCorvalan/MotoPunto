@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import data from "../Data/Moto.json";
+import UsuariosInteresados from "../Data/UsuariosInteresados.json"
 
 
 const MotoContext = createContext();
@@ -13,7 +14,7 @@ export default function ContextMoto({ children }) {
   const [FiltroCilindrada, SetFiltroCilindrada] = useState(null);
   const [FiltroMarca, SetFiltroMarca] = useState(null);
   const [tipoUsuario,SetTipoUsuario]=useState("")
-
+  const [usuarios,SetUsuarios]=useState(UsuariosInteresados.UsuariosInteresados)
   useEffect(() => {
     let motosF = data.moto;
 
@@ -48,13 +49,15 @@ export default function ContextMoto({ children }) {
     }
   }, [FiltroCilindrada, FiltroPrecio, FiltroMarca]);
 
+
+
   return (
     <MotoContext.Provider
       value={{
         motos,
         setFiltroPrecio,
         SetFiltroCilindrada,
-        SetFiltroMarca,SetTipoUsuario,FiltroPrecio,FiltroMarca,FiltroCilindrada,tipoUsuario
+        SetFiltroMarca,SetTipoUsuario,SetUsuarios,FiltroPrecio,FiltroMarca,FiltroCilindrada,tipoUsuario,usuarios
       }}
     >
       {children}

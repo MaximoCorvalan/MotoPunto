@@ -1,0 +1,33 @@
+.contFiltroAdmin
+{
+    display:  flex;
+    flex-direction: row;
+    padding: 4px;
+    align-items: center;
+    background-color: rgb(31, 30, 30);
+    gap: 40px;
+    justify-content: space-around;
+    color: white;
+}
+.contFiltro
+{
+    display:  flex;
+    align-items: center;
+    gap: 10px;
+}
+.btnMoto
+{
+    padding: 10px;
+    border: none;
+    background-color:rgb(134, 34, 34);
+    border:  1px solid black;
+    color: white;
+}
+
+.inputNombre
+{
+    padding: 3px;
+    border:  1px solid black;
+    border-radius: 4px;
+    outline: none;
+}
