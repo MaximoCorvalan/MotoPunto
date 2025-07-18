@@ -37,7 +37,7 @@ export default function Clientes() {
                 <td>{cliente.email}</td>
                 <td>{cliente.MotoInteresada}</td>
                 <td>
-                  {esActivo ? <button className="btnAtender">LLAMAR</button> : "REALIZADO  EL 12/7/2025"}
+                  {esActivo ? <button className="btnAtender">CONTACTAR</button> : "REALIZADO  EL 12/7/2025"}
                 </td>
              
               </tr>

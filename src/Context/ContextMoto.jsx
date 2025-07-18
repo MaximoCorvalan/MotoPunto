@@ -15,6 +15,10 @@ export default function ContextMoto({ children }) {
   const [FiltroMarca, SetFiltroMarca] = useState(null);
   const [tipoUsuario,SetTipoUsuario]=useState("")
   const [usuarios,SetUsuarios]=useState(UsuariosInteresados.UsuariosInteresados)
+
+  const [fechaDesde,SetFechaDesde]=useState(null)
+  const [fechaHasta,SetFechaHasta]=useState(null);
+  const [nombreF,SetNombreFiltro] = useState(" ")
   useEffect(() => {
     let motosF = data.moto;
 
