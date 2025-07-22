@@ -53,6 +53,38 @@ export default function ContextMoto({ children }) {
     }
   }, [FiltroCilindrada, FiltroPrecio, FiltroMarca]);
 
+  function parseFecha(fechaStr) {
+  const [dia, mes, anio] = fechaStr.split("/").map(Number);
+  return `${anio}-${String(mes).padStart(2, "0")}-${String(dia).padStart(2, "0")}`;
+}
+
+
+useEffect(() => {
+  let usuariosInteresadosAux = UsuariosInteresados.UsuariosInteresados;
+
+
+  if (nombreF.trim() !== "") {
+    usuariosInteresadosAux = usuariosInteresadosAux.filter((usu) =>
+      usu.nombre.toLowerCase().includes(nombreF.toLowerCase())
+    );
+  }
+
+
+  if (fechaDesde && fechaHasta) {
+
+    usuariosInteresadosAux = usuariosInteresadosAux.filter((usu) => {
+
+      const fechaUsuario = parseFecha(usu.FechaConsulta);
+ 
+
+
+      return fechaUsuario >= fechaDesde && fechaUsuario <= fechaHasta;
+    });
+  }
+
+  // 👉 Actualizar lista final
+  SetUsuarios(usuariosInteresadosAux);
+}, [nombreF, fechaDesde, fechaHasta]);
 
 
   return (
@@ -61,7 +93,7 @@ export default function ContextMoto({ children }) {
         motos,
         setFiltroPrecio,
         SetFiltroCilindrada,
-        SetFiltroMarca,SetTipoUsuario,SetUsuarios,FiltroPrecio,FiltroMarca,FiltroCilindrada,tipoUsuario,usuarios
+        SetFiltroMarca,SetTipoUsuario,SetUsuarios,SetNombreFiltro,SetFechaHasta,SetFechaDesde,FiltroPrecio,FiltroMarca,FiltroCilindrada,tipoUsuario,usuarios
       }}
     >
       {children}

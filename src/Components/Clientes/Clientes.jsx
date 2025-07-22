@@ -29,7 +29,7 @@ export default function Clientes() {
             const esActivo = cliente.Estado === "Activo";
 
             return (
-              <tr key={cliente.email || index}>
+              <tr key={cliente.DNI || index}>
                 <td>{cliente.nombre}</td>
                 <td>{cliente.Número}</td>
                 <td>{cliente.Dirección}</td>

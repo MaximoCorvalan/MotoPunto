@@ -1,6 +1,6 @@
 {
   "UsuariosInteresados": [
-    {
+    { "DNI": "1",
       "nombre": "Jond Doue",
       "Número": 11232332,
       "Dirección": "LAS HERAS 111",
@@ -9,7 +9,7 @@
       "MotoInteresada": "GLH 150",
       "email": "Hola@gmail.com"
     },
-    {
+    {"DNI": "2",
       "nombre": "María Pérez",
       "Número": 11345678,
       "Dirección": "SAN MARTÍN 234",
@@ -18,7 +18,7 @@
        "MotoInteresada": "GLH 150",
       "email": "maria.perez@example.com"
     },
-    {
+    {"DNI": "3",
       "nombre": "Carlos García",
       "Número": 11456789,
       "Dirección": "AV. CÓRDOBA 987",
@@ -27,7 +27,7 @@
       "MotoInteresada": "XR 150L",
       "email": "carlosg@gmail.com"
     },
-    {
+    {"DNI": "4",
       "nombre": "Lucía Romero",
       "Número": 11987654,
       "Dirección": "BELGRANO 321",
@@ -36,7 +36,7 @@
          "MotoInteresada": "GLH 150",
       "email": "lucia.romero@hotmail.com"
     },
-    {
+    {"DNI": "5",
       "nombre": "Pedro Fernández",
       "Número": 11654321,
       "Dirección": "RIVADAVIA 444",
@@ -45,7 +45,7 @@
       "MotoInteresada": "GLH 150",
       "email": "pedro.f@correo.com"
     },
-    {
+    {"DNI": "6",
       "nombre": "Ana López",
       "Número": 11881234,
       "Dirección": "SARMIENTO 222",
@@ -54,7 +54,7 @@
        "MotoInteresada": "GLH 150",
       "email": "ana.lopez@gmail.com"
     },
-    {
+    {"DNI": "7",
       "nombre": "Diego Marini",
       "Número": 11776543,
       "Dirección": "9 DE JULIO 876",
@@ -63,7 +63,7 @@
       "MotoInteresada": "GLH 150",
       "email": "dmarini@correo.com"
     },
-    {
+    {"DNI": "8",
       "nombre": "Sofía Méndez",
       "Número": 11823456,
       "Dirección": "PERÓN 123",
@@ -72,7 +72,7 @@
       "MotoInteresada": "XR 190L",
       "email": "sofia.m@gmail.com"
     },
-    {
+    {"DNI": "9",
       "nombre": "Gonzalo Ruiz",
       "Número": 11567890,
       "Dirección": "MITRE 555",
@@ -81,7 +81,7 @@
       "MotoInteresada": "GLH 150",
       "email": "gonzalo.ruiz@example.com"
     },
-    {
+    {"DNI": "10",
       "nombre": "Natalia Herrera",
       "Número": 11999887,
       "Dirección": "ALSINA 999",
@@ -90,7 +90,7 @@
       "MotoInteresada": "CB 300F",
       "email": "natalia.h@correo.com"
     },
-    {
+    {"DNI": "11",
       "nombre": "Tomás Aguirre",
       "Número": 11876543,
       "Dirección": "PUEYRREDÓN 432",
@@ -99,7 +99,7 @@
       "MotoInteresada": "GLH 150",
       "email": "tomas.aguirre@gmail.com"
     },
-    {
+    {"DNI": "12",
       "nombre": "Camila Ríos",
       "Número": 11765432,
       "Dirección": "URQUIZA 765",
@@ -108,7 +108,7 @@
          "MotoInteresada": "GLH 150",
       "email": "camila.rios@hotmail.com"
     },
-    {
+    {"DNI": "13",
       "nombre": "Matías Vera",
       "Número": 11334455,
       "Dirección": "YRIGOYEN 1111",
@@ -117,7 +117,7 @@
       "MotoInteresada": "XR 150L",
       "email": "matiasv@correo.com"
     },
-    {
+    {"DNI": "14",
       "nombre": "Julieta Torres",
       "Número": 11911122,
       "Dirección": "MORENO 300",
@@ -126,47 +126,47 @@
         "MotoInteresada": "GLH 150",
       "email": "julieta.torres@gmail.com"
     },
-    {
+    {"DNI": "15",
       "nombre": "Federico López",
       "Número": 11678901,
       "Dirección": "ALVEAR 654",
       "FechaConsulta": "01/07/2025",
       "Estado": "Activo",
       "MotoInteresada": "XR 190L",
-      "email": "f.lopez@example.com"
+      "email": "f.lopez@exaple.com"
     },
-       {
+       {"DNI": "16",
       "nombre": "Catalina",
       "Número": 116789401,
       "Dirección": "conada 654",
       "FechaConsulta": "01/07/2025",
       "Estado": "Activo",
       "MotoInteresada": "XR 190L",
-      "email": "f.lopez@example.com"
-    },   {
+      "email": "f.lopez@examplecom"
+    },   {"DNI": "17",
       "nombre": "Estefania ramires",
       "Número": 11678901,
       "Dirección": "ALVEAR 654",
       "FechaConsulta": "01/07/2025",
       "Estado": "Activo",
       "MotoInteresada": "XR 190L",
-      "email": "f.lopez@example.com"
-    },   {
+      "email": "f.loezexample.com"
+    },   {"DNI": "19",
       "nombre": "Ignacio Lopez",
       "Número": 11678901,
       "Dirección": "ALVEAR 654",
       "FechaConsulta": "01/07/2025",
       "Estado": "Activo",
       "MotoInteresada": "XR 190L",
-      "email": "f.lopez@example.com"
-    },   {
+      "email": "f.lopez@exampe.com"
+    },   {"DNI": "20",
       "nombre": "Juan Cruz",
       "Número": 11678901,
       "Dirección": "ALVEAR 654",
       "FechaConsulta": "01/07/2025",
       "Estado": "Activo",
       "MotoInteresada": "XR 190L",
-      "email": "f.lopez@example.com"
+      "email": "f.lope@example.com"
     }
   ]
 }

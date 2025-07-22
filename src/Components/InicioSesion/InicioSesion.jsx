@@ -5,13 +5,13 @@ import DialogCont from "../DialogCont/DialogCont";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useMotos } from "../../Context/ContextMoto";
-
+import Swal from "sweetalert2"; 
 import Register from "../Register/Register";
 export default function InicioSesion({ onClose }) {
   const [registrarse,setRegister] = useState(false);
   const navigate = useNavigate();
   const {SetTipoUsuario,tipoUsuario} = useMotos()
-  function esAdmin(e)
+  function IniciarSesion(e)
   {  
      e.preventDefault();
        const form = e.target;
@@ -21,10 +21,37 @@ export default function InicioSesion({ onClose }) {
        if(usuario==="admin" && contrasena==="admin")
         {
           SetTipoUsuario("Admin")
-          alert(tipoUsuario)
+       
           navigate("/Administradores/AtencionUsuarios")
 
-        }
+        }else if (usuario==="prueba12" && contrasena==="pueba12")
+          {
+            SetTipoUsuario("User")
+            
+          }else
+            {Swal.fire({
+                title: "Usuario no encontrado",
+                text: "Por favor revise las credenciales ingresadas",
+                icon: "error",
+                confirmButtonText: "Cerrar",
+                customClass: {
+                  popup: "mi-alerta-custom",
+                  confirmButton: "mi-boton-rojo",
+                },
+                showClass: {
+                  popup: "swal2-show swal2-animate__fadeInDown",
+                },
+                hideClass: {
+                  popup: "swal2-hide swal2-animate__fadeOutUp",
+                },
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  onClose();
+                }
+              });
+
+            }
+          
      
      
      onClose();
@@ -33,7 +60,7 @@ export default function InicioSesion({ onClose }) {
   return (
     <>
       <form
-        onSubmit={esAdmin}
+        onSubmit={IniciarSesion}
       >
         <div className="ConteinerLogin">
           <img className="LogoLogin" src={logo} alt="Logo MotoPunto" />

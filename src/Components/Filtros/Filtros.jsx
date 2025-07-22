@@ -133,7 +133,7 @@ useEffect(() => {
           id="input"
             placeholder="100000.00"
             className="InputPrecio"
-            value={FiltroPrecio}
+             value={FiltroPrecio || " "}
       
           onChange={(e) =>{
              const valor = parseFloat(e.target.value);

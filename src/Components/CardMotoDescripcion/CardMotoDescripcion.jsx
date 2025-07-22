@@ -5,45 +5,59 @@ import InnerImageZoom from 'react-inner-image-zoom';
 
 import { useState ,useEffect} from "react";
 import Swal from "sweetalert2"; 
+import { useMotos } from "../../Context/ContextMoto";
 
 export default function CardMotoDescripcion({ onClose,motoSeleccionada }) {
 
   const [enviado, setEnviado] = useState(false);
   const [urlImagen,setUrlImagen] = useState(motoSeleccionada.image[0])
-
+  const {tipoUsuario} = useMotos()
 
 
   if (!motoSeleccionada) {
     return <div>Cargando información de la moto...</div>;
   }
 
-  function recibirAsesoramiento() {
-    //AACA PREGUNTAR SI TIENE ESTA REGISTRADO Y DEMAS
-    setEnviado(true);
+function recibirAsesoramiento() {
+  // Validar si el usuario está registrado
+  const registrado = tipoUsuario.trim() !== "";
 
-    Swal.fire({
-      title: "¡Gracias por tu interés!",
-      text: "En breve un asesor se comunicará con vos al siguiente número 113242213",
-      icon: "success",
-      confirmButtonText: "Cerrar",
-      customClass: {
-        popup: "mi-alerta-custom",
-        confirmButton: "mi-boton-rojo",
-      },
-      showClass: {
-        popup: "swal2-show swal2-animate__fadeInDown",
-      },
-      hideClass: {
-        popup: "swal2-hide swal2-animate__fadeOutUp",
-      },
-    }).then((result)=>
-      {
-        if(result.isConfirmed)
-          {
-            onClose()
-          }
-      });
+  let titulo = "";
+  let texto = "";
+  let icono = "";
+
+  if (registrado) {
+    setEnviado(true);
+    titulo = "¡Gracias por tu interés!";
+    texto = "En breve un asesor se comunicará con vos al siguiente número 113242213";
+    icono = "success";
+  } else {
+    titulo = "Primero debe registrarse";
+    texto = "Por favor, complete el registro para continuar.";
+    icono = "error";
   }
+
+  Swal.fire({
+    title: titulo,
+    text: texto,
+    icon: icono,
+    confirmButtonText: "Cerrar",
+    customClass: {
+      popup: "mi-alerta-custom",
+      confirmButton: "mi-boton-rojo",
+    },
+    showClass: {
+      popup: "swal2-show swal2-animate__fadeInDown",
+    },
+    hideClass: {
+      popup: "swal2-hide swal2-animate__fadeOutUp",
+    },
+  }).then((result) => {
+    if (result.isConfirmed) {
+      onClose();
+    }
+  });
+}
 
   return (
     <div className="conteinerMotoParent">
@@ -59,9 +73,9 @@ export default function CardMotoDescripcion({ onClose,motoSeleccionada }) {
 
           <div className="contFotos">
             {
-             motoSeleccionada.image.map((UrlMoto)=>
+             motoSeleccionada.image.map((UrlMoto,index)=>
                 {
-                  return <div className="cuadro" onClick={()=>setUrlImagen(UrlMoto)}><img  className="contImg" src={UrlMoto} /> </div>;
+                  return <div key={index} className="cuadro" onClick={()=>setUrlImagen(UrlMoto)}><img  className="contImg" src={UrlMoto} /> </div>;
                 })
             }
               
