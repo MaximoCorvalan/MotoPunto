@@ -20,28 +20,14 @@
 
 .conteinerMain {
 
-
-  width: 100vw;
-
-
   place-items: center; 
   display: grid;
  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 15px; /* espacio entre columnas/filas */
-  overflow-y: auto;
+  gap: 5px; /* espacio entre columnas/filas */
 
 
-}
-main {
-  grid-area: main;
-  display: flex;
-   height: 76vh;
+
 }
 
-@media screen and (max-width: 1605px) {
- main {
-  grid-area: main;
-  display: flex;
-   height: 65vh;
-}
-}
+
+

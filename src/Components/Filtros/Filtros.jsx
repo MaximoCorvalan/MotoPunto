@@ -48,7 +48,7 @@ useEffect(() => {
     setSeleccion(" "); 
   }
   if (FiltroMarca === null) {
-    setSeleccionMoto(" "); 
+      
   }
 
 
