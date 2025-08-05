@@ -10,7 +10,7 @@ import { useMotos } from "../../Context/ContextMoto";
 export default function CardMotoDescripcion({ onClose,motoSeleccionada }) {
 
   const [enviado, setEnviado] = useState(false);
-  const [urlImagen,setUrlImagen] = useState(motoSeleccionada.image[0])
+  const [urlImagen,setUrlImagen] = useState(motoSeleccionada.imagens[0].urlimagen)
   const {tipoUsuario} = useMotos()
 
 
@@ -73,9 +73,9 @@ function recibirAsesoramiento() {
 
           <div className="contFotos">
             {
-             motoSeleccionada.image.map((UrlMoto,index)=>
+             motoSeleccionada.imagens?.map((motoUrl,index)=>
                 {
-                  return <div key={index} className="cuadro" onClick={()=>setUrlImagen(UrlMoto)}><img  className="contImg" src={UrlMoto} /> </div>;
+                  return <div key={index} className="cuadro" onClick={()=>setUrlImagen(motoUrl.urlimagen)}><img  className="contImg" src={motoUrl.urlimagen} /> </div>;
                 })
             }
               
@@ -120,7 +120,7 @@ function recibirAsesoramiento() {
               <strong>Transmición </strong> {motoSeleccionada.transmision}
             </div>
             <div className="c1">
-              <strong>Caja de cambio </strong> {motoSeleccionada.cajaDeCambio}
+              <strong>Caja de cambio </strong> {motoSeleccionada.cajacambio}
             </div>
           </div>
 
@@ -129,16 +129,16 @@ function recibirAsesoramiento() {
               <strong>Iluminación </strong> {motoSeleccionada.iluminacion}
             </div>
             <div className="c1">
-              <strong>Capacidad de tanque </strong> {motoSeleccionada.capacidadTanque}
+              <strong>Capacidad de tanque </strong> {motoSeleccionada.tanquel}
             </div>
           </div>
 
           <div className="divCaract">
             <div className="c1">
-              <strong>Neumático delantero </strong> {motoSeleccionada.neumaticoDelantero}
+              <strong>Neumático delantero </strong> {motoSeleccionada.neumaticod}
             </div>
             <div className="c1">
-              <strong>Neumático trasero </strong> {motoSeleccionada.neumaticoTrasero}
+              <strong>Neumático trasero </strong> {motoSeleccionada.neumaticot}
             </div>
           </div>
 
@@ -153,11 +153,11 @@ function recibirAsesoramiento() {
 
           <div className="divCaract">
             <div className="c1">
-              <strong>Suspensión Delantera</strong> {motoSeleccionada.suspensionDelantera}
+              <strong>Suspensión Delantera</strong> {motoSeleccionada.suspenciond}
             
             </div>
             <div className="c1">
-              <strong>Suspensión Trasera </strong>  {motoSeleccionada.suspensionTrasera}
+              <strong>Suspensión Trasera </strong>  {motoSeleccionada.suspenciont}
             </div>
           </div>
         </div>

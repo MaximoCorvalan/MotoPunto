@@ -8,6 +8,9 @@ export default function CardMoto({onclick, moto})
 { 
 
 
+
+
+
   
   return (
     <>
@@ -15,12 +18,12 @@ export default function CardMoto({onclick, moto})
       initial={{ x: -100, opacity: 0 }}         // al inicio
       animate={{ x: 0, opacity: 1 }}            // al montarse
       whileHover={{ scale: 1.05 }}               // al hacer hover
-      transition={{ duration: 0.8 }}   
+        transition={{ duration: 1}}
       className='conteinercardMoto'  
       onClick={onclick}       // duración de animación
  
     >
-      <img src={moto.image[0]} className="imgMoto" alt="" />
+      <img src={moto.imagens[0].urlimagen} className="imgMoto" alt="" />
       <div className='caracteristicasConteiner'>
       <p>{moto.marca}</p>
       <p> {moto.modelo} </p>

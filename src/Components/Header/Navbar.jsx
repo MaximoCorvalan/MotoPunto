@@ -25,7 +25,7 @@ function NavBar() {
  
 
   };
-
+if (!motos) return <p>Cargando motos...</p>;
   const cerrarModal = () => {
     setModalAbierto(false);
     setMotoSeleccionada(null);
@@ -40,6 +40,7 @@ function NavBar() {
            <Autocomplete
         placeholder="Busque su moto"
         className="inputNavbar"
+         name="inputMoto"
           variant="plain"
           slotProps={{ listbox: { variant: "outlined" } }}
                options={motos.map((m)=>m.modelo)}
@@ -54,7 +55,7 @@ function NavBar() {
           {tipoUsuario==="Admin" || tipoUsuario=="User"?(
                <FontAwesomeIcon
             icon={faUser}
-            style={{ color: "white", fontSize: "18px" }}
+            style={{ color: "white", fontSize: "25px" }}
           />
 
           ):(<>

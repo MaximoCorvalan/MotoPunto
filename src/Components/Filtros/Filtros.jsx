@@ -8,7 +8,7 @@ import { parse } from "@fortawesome/fontawesome-svg-core";
 import { useEffectl } from "react";
 
 export default function Filtros() {
-const { setFiltroPrecio,SetFiltroCilindrada, FiltroCilindrada,FiltroMarca ,FiltroPrecio} = useMotos();
+const { setFiltroPrecio,SetFiltroCilindrada, FiltroCilindrada,FiltroMarca ,FiltroPrecio,SetFiltroTipoMoto} = useMotos();
 
   const [open, setOpen] = useState(false);
   const [openTipoMoto,setOpenTipoMoto]=useState(false);
@@ -32,6 +32,7 @@ const [seleccionMoto, setSeleccionMoto] = useState(" ");
   const seleccionarOpcionMoto = (opcion) => {
     setSeleccionMoto(opcion);
     setOpenTipoMoto(false);
+    SetFiltroTipoMoto(opcion)
 
 
   };
@@ -46,10 +47,9 @@ const [seleccionMoto, setSeleccionMoto] = useState(" ");
 useEffect(() => {
   if (FiltroCilindrada === null) {
     setSeleccion(" "); 
+    setSeleccionMoto(" ")
   }
-  if (FiltroMarca === null) {
-      
-  }
+
 
 
 

@@ -8,8 +8,8 @@ import { useMotos } from '../../Context/ContextMoto';
 function ListaMotos() {
   const [modalAbierto, setModalAbierto] = useState(false);
   const [motoSeleccionada, setMotoSeleccionada] = useState(null);
-const { motos } = useMotos();
-
+const { motos,FiltroMarca,FiltroCilindrada } = useMotos();
+if (!motos) return <p>Cargando motos...</p>;
 
   const abrirModal = (moto) => {
     setMotoSeleccionada(moto);
@@ -27,8 +27,9 @@ const { motos } = useMotos();
   return (
     <>
       {motos.map((moto, index) => (
+       
         <CardMoto
-            key={ index}
+            key={`${index}-${FiltroMarca}`}
           moto={moto}
           onclick={() => abrirModal(moto)}
         />

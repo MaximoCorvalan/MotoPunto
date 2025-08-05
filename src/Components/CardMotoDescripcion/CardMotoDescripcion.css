@@ -149,7 +149,8 @@ overflow-y: auto;
 .c1 {
   width: 45%; /* Que ambos bloques ocupen el mismo ancho */
   display: flex;
-  justify-content: space-between; /* Separa la etiqueta <strong> del valor */
+  justify-content: space-between;
+  align-items: center; /* Separa la etiqueta <strong> del valor */
 }
 .divCaract
 {  
@@ -157,8 +158,6 @@ overflow-y: auto;
   display: flex;
   width: 100%;
   border-bottom: 2px olive solid;
-
-
 
   justify-content: space-around;
   gap: 15px;  

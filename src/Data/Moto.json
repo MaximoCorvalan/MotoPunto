@@ -31,6 +31,7 @@
     },
     {
       "marca": "Honda",
+      "tipoMoto":"Naked",
       "modelo": "CBR250R",
       "motor": "1/cilindro DOHC 4/válvulas",
       "cilindrada": "249",

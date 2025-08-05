@@ -9,6 +9,7 @@ export default function Clientes() {
 
   return (
     <>
+   
  
       <table className="contTabla">
         <thead>
@@ -27,7 +28,7 @@ export default function Clientes() {
         <tbody>
           {usuarios.map((cliente, index) => {
             const esActivo = cliente.Estado === "Activo";
-
+            
             return (
               <tr key={cliente.DNI || index}>
                 <td>{cliente.nombre}</td>
@@ -45,6 +46,7 @@ export default function Clientes() {
           })}
         </tbody>
       </table>
+   
     </>
   );
 }

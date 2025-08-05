@@ -8,19 +8,49 @@ const MotoContext = createContext();
 
 export const useMotos = () => useContext(MotoContext);
 export default function ContextMoto({ children }) {
-  const [motos, setMotos] = useState(data.moto);
+  const [motos, setMotos] = useState(null);
   // Cargar datos iniciales desde el JSON
   const [FiltroPrecio, setFiltroPrecio] = useState(null);
   const [FiltroCilindrada, SetFiltroCilindrada] = useState(null);
   const [FiltroMarca, SetFiltroMarca] = useState(null);
+    const [FiltoTipoMoto, SetFiltroTipoMoto] = useState(null);
   const [tipoUsuario,SetTipoUsuario]=useState("")
   const [usuarios,SetUsuarios]=useState(UsuariosInteresados.UsuariosInteresados)
-
+  const [dataAux,SetDataAux]=useState(null)
   const [fechaDesde,SetFechaDesde]=useState(null)
   const [fechaHasta,SetFechaHasta]=useState(null);
   const [nombreF,SetNombreFiltro] = useState(" ")
+
   useEffect(() => {
-    let motosF = data.moto;
+  async function fetchData() {
+    try {
+
+      const resp = await fetch("https://localhost:7117/api/moto");
+      if (!resp.ok) {
+        const errorData = await resp.json();
+        alert("ERROR: " + JSON.stringify(errorData));
+        return;
+      }
+      const data = await resp.json();  
+
+      SetDataAux(data)
+      setMotos(data)
+     
+    } catch (error) {
+      alert("Error en fetch: " + error.message);
+    }
+  }
+
+  fetchData();
+}, []);
+
+
+
+  useEffect(() => {
+      if(motos===null){return;}
+
+    let motosF = dataAux;
+    alert(JSON.stringify(motosF) + "sdasd")
 
     if (FiltroCilindrada) {
       motosF = motosF.filter((moto) =>
@@ -42,16 +72,30 @@ export default function ContextMoto({ children }) {
       });
     }
 
+    if(FiltoTipoMoto)
+      {
+      
+          motosF = motosF.filter((moto) => {
+        return moto.tipoMoto
+          .trim()
+          .toUpperCase()
+          .includes(FiltoTipoMoto.toString().trim().toUpperCase());
+      });
+
+
+      }
+
     if (motosF.length == 0 || FiltroMarca == "TODOS") {
-      setMotos(data.moto);
+      setMotos(dataAux);
 
       SetFiltroCilindrada(null);
       SetFiltroMarca(null);
+      SetFiltroTipoMoto(null);
 
     } else {
       setMotos(motosF);
     }
-  }, [FiltroCilindrada, FiltroPrecio, FiltroMarca]);
+  }, [FiltroCilindrada, FiltroPrecio, FiltroMarca,FiltoTipoMoto]);
 
   function parseFecha(fechaStr) {
   const [dia, mes, anio] = fechaStr.split("/").map(Number);
@@ -91,9 +135,9 @@ useEffect(() => {
     <MotoContext.Provider
       value={{
         motos,
-        setFiltroPrecio,
+        setFiltroPrecio,SetFiltroTipoMoto,
         SetFiltroCilindrada,
-        SetFiltroMarca,SetTipoUsuario,SetUsuarios,SetNombreFiltro,SetFechaHasta,SetFechaDesde,FiltroPrecio,FiltroMarca,FiltroCilindrada,tipoUsuario,usuarios
+        SetFiltroMarca,SetTipoUsuario,SetUsuarios,SetNombreFiltro,SetFechaHasta,SetFechaDesde,FiltoTipoMoto,FiltroPrecio,FiltroMarca,FiltroCilindrada,tipoUsuario,usuarios
       }}
     >
       {children}

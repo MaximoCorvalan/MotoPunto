@@ -8,7 +8,7 @@ export default function Footer() {
     <>
       <footer className="footer">
         <div className="footer-bottom">
-          © 2025 MotoPunto. Todos los derechos reservados.
+          © 2025 MotoPunto | Todos los derechos reservados.
         </div>
         <div className="conteinFooterSeccions">
           <div className="footer-section">

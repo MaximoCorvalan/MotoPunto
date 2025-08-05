@@ -48,6 +48,7 @@ export default function FiltroUsuario() {
         <input
           id="desde"
           type="date"
+          name="inputFechaDesde"
           value={desde}
           onChange={manejarDesde}
           />
@@ -55,6 +56,7 @@ export default function FiltroUsuario() {
         <input
           id="hasta"
           type="date"
+          name="inputFechaHasta"
           value={hasta}
           onChange={manejarHasta}
           />
@@ -62,7 +64,7 @@ export default function FiltroUsuario() {
 
         <div className="contFiltro">
             <label>Buscar por Nombre</label>
-        <input className="inputNombre" onChange={manejarInput} type="text" />
+        <input className="inputNombre" name="inputName" onChange={manejarInput} type="text" />
         </div>
     
         <button className="btnMoto" onClick={manejarCambio}>Agregar Motocicleta</button>
