@@ -16,11 +16,13 @@ export default function ListaMarcas() {
     SetFiltroMarca(tab)
 
 
+
+
   }
   useEffect(()=>{
     if(FiltroMarca===null)
       {
-
+     
         setActiveTab("TODOS");
       }
 

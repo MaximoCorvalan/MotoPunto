@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import data from "../Data/Moto.json";
 import UsuariosInteresados from "../Data/UsuariosInteresados.json"
+import { Alert } from "@mui/joy";
 
 
 const MotoContext = createContext();
@@ -14,8 +15,8 @@ export default function ContextMoto({ children }) {
   const [FiltroCilindrada, SetFiltroCilindrada] = useState(null);
   const [FiltroMarca, SetFiltroMarca] = useState(null);
     const [FiltoTipoMoto, SetFiltroTipoMoto] = useState(null);
-  const [tipoUsuario,SetTipoUsuario]=useState("")
-  const [usuarios,SetUsuarios]=useState(UsuariosInteresados.UsuariosInteresados)
+  const [usuario,SetUsuario]=useState(null)
+  const [clientes,SetClientes]=useState([])
   const [dataAux,SetDataAux]=useState(null)
   const [fechaDesde,SetFechaDesde]=useState(null)
   const [fechaHasta,SetFechaHasta]=useState(null);
@@ -50,13 +51,16 @@ export default function ContextMoto({ children }) {
       if(motos===null){return;}
 
     let motosF = dataAux;
-    alert(JSON.stringify(motosF) + "sdasd")
+    alert(JSON.stringify(motosF))
+  
 
-    if (FiltroCilindrada) {
-      motosF = motosF.filter((moto) =>
-        moto.modelo.trim().includes(FiltroCilindrada.toString().trim())
-      );
-    }
+  if (FiltroCilindrada) {
+  const filtroNum = Number(FiltroCilindrada);
+  motosF = motosF.filter((moto) =>
+    Math.abs(moto.cilindrada - filtroNum) <= 10
+  );
+}
+
 
     if (FiltroPrecio) {
       motosF = motosF.filter((moto) => {
@@ -65,18 +69,19 @@ export default function ContextMoto({ children }) {
     }
     if (FiltroMarca) {
       motosF = motosF.filter((moto) => {
-        return moto.marca
-          .trim()
-          .toUpperCase()
-          .includes(FiltroMarca.toString().trim().toUpperCase());
+        return moto.marcaDescripcion
+        .trim()
+        .toUpperCase()
+        .includes(FiltroMarca.toString().trim().toUpperCase());
       });
+      alert(JSON.stringify(motosF))
     }
 
     if(FiltoTipoMoto)
       {
       
           motosF = motosF.filter((moto) => {
-        return moto.tipoMoto
+        return moto.tipomoto
           .trim()
           .toUpperCase()
           .includes(FiltoTipoMoto.toString().trim().toUpperCase());
@@ -84,8 +89,10 @@ export default function ContextMoto({ children }) {
 
 
       }
-
+  
     if (motosF.length == 0 || FiltroMarca == "TODOS") {
+      
+ 
       setMotos(dataAux);
 
       SetFiltroCilindrada(null);
@@ -97,37 +104,78 @@ export default function ContextMoto({ children }) {
     }
   }, [FiltroCilindrada, FiltroPrecio, FiltroMarca,FiltoTipoMoto]);
 
-  function parseFecha(fechaStr) {
-  const [dia, mes, anio] = fechaStr.split("/").map(Number);
-  return `${anio}-${String(mes).padStart(2, "0")}-${String(dia).padStart(2, "0")}`;
+
+
+  async function obtenerClientes() {
+      try {
+        const response = await fetch("https://localhost:7117/api/Consulta");
+        if (response.ok) {
+          const clientes = await response.json();
+  
+
+         
+          SetClientes(clientes);
+        } else {
+        }
+      } catch (error) {
+        alert("Error en fetch: " + error.message);
+      }
+    }
+
+    function parseFechaDDMMYYYY(fechaStr) {
+  if (!fechaStr) return null;
+  const [dia, mes, anio] = fechaStr.trim().split("/");
+  return new Date(`${anio}-${mes}-${dia}`);
 }
 
-
 useEffect(() => {
-  let usuariosInteresadosAux = UsuariosInteresados.UsuariosInteresados;
+  let usuariosInteresadosAux = clientes;
+ 
 
 
   if (nombreF.trim() !== "") {
     usuariosInteresadosAux = usuariosInteresadosAux.filter((usu) =>
-      usu.nombre.toLowerCase().includes(nombreF.toLowerCase())
+      usu.nombreUsuario.toLowerCase().includes(nombreF.toLowerCase())
     );
   }
 
 
-  if (fechaDesde && fechaHasta) {
 
-    usuariosInteresadosAux = usuariosInteresadosAux.filter((usu) => {
+  console.log("la fecha antes de entrar es "+ fechaDesde)
+  console.log("la fecha antes de entrar es "+ fechaHasta)
+if (fechaDesde && fechaHasta) {
+  console.log("entro a la fx")
+  const fechaDesdeAux = new Date(fechaDesde);
+  const fechaHastaAux = new Date(fechaHasta);
 
-      const fechaUsuario = parseFecha(usu.FechaConsulta);
- 
 
+  // Validar que las fechas sean válidas
+  if (isNaN(fechaDesdeAux.getTime()))console.log("Fecha desde no válida");
+  if (isNaN(fechaHastaAux.getTime())) console.log("Fecha hasta no válida");
 
-      return fechaUsuario >= fechaDesde && fechaUsuario <= fechaHasta;
-    });
-  }
+  usuariosInteresadosAux = usuariosInteresadosAux.filter((usu) => {
+  const fechaUsuario = parseFechaDDMMYYYY(usu.fecha);
+
+  console.log("FECHA DESDE:", fechaDesdeAux.toISOString().split("T")[0]);
+  console.log("FECHA HASTA:", fechaHastaAux.toISOString().split("T")[0]);
+  console.log("FECHA USUARIO:", fechaUsuario?.toISOString().split("T")[0]);
+
+  return (
+    
+    fechaUsuario >= fechaDesdeAux &&
+    fechaUsuario <= fechaHastaAux
+  );
+});
+}
+  
+
+  console.log(JSON.stringify(usuariosInteresadosAux))
+if (!usuariosInteresadosAux?.length ) {
+  obtenerClientes();
+}
 
   // 👉 Actualizar lista final
-  SetUsuarios(usuariosInteresadosAux);
+  SetClientes(usuariosInteresadosAux);
 }, [nombreF, fechaDesde, fechaHasta]);
 
 
@@ -137,7 +185,7 @@ useEffect(() => {
         motos,
         setFiltroPrecio,SetFiltroTipoMoto,
         SetFiltroCilindrada,
-        SetFiltroMarca,SetTipoUsuario,SetUsuarios,SetNombreFiltro,SetFechaHasta,SetFechaDesde,FiltoTipoMoto,FiltroPrecio,FiltroMarca,FiltroCilindrada,tipoUsuario,usuarios
+        SetFiltroMarca,SetUsuario,SetClientes,SetNombreFiltro,SetFechaHasta,SetFechaDesde,FiltoTipoMoto,FiltroPrecio,FiltroMarca,FiltroCilindrada,usuario,clientes
       }}
     >
       {children}

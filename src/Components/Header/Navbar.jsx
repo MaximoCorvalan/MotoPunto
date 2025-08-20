@@ -1,21 +1,21 @@
-import React, { use, useEffect } from "react";
+
 import "./NavBar.css";
 import logo from "../../assets/img/Logo2.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faL, faRightToBracket ,faUser } from "@fortawesome/free-solid-svg-icons";
+import {  faRightToBracket ,faUser } from "@fortawesome/free-solid-svg-icons";
 
 import DialogCont from "../DialogCont/DialogCont";
 import { useState } from "react";
 import InicioSesion from "../InicioSesion/InicioSesion";
 import Autocomplete from "@mui/joy/Autocomplete";
-import Input from "@mui/joy/Input";
+
 import { useMotos } from '../../Context/ContextMoto';
-import { m } from "framer-motion";
+
 import CardMotoDescripcion from "../CardMotoDescripcion/CardMotoDescripcion";
 function NavBar() {
   const [modalAbierto, setModalAbierto] = useState(false);
   const [modalAbiertoLogin, setModalAbiertoLogin] = useState(false);
- const {motos,tipoUsuario} = useMotos()
+ const {motos,usuario} = useMotos()
 
   const [motoSeleccionada, setMotoSeleccionada] = useState(null);
 
@@ -37,22 +37,26 @@ if (!motos) return <p>Cargando motos...</p>;
       <nav>
         <img src={logo} className="logo" alt="Logo" />
 
-           <Autocomplete
-        placeholder="Busque su moto"
-        className="inputNavbar"
-         name="inputMoto"
-          variant="plain"
-          slotProps={{ listbox: { variant: "outlined" } }}
-               options={motos.map((m)=>m.modelo)}
-               onChange={(event, newValue) => {
-               if (newValue) {
-    const motoSelect = motos.find(mot => mot.modelo === newValue);
-    abrirModal(motoSelect); 
-  }
-  }} />
+          <Autocomplete
+  placeholder="Busque su moto"
+  className="inputNavbar"
+  name="inputMoto"
+  variant="plain"
+  slotProps={{ listbox: { variant: "outlined" } }}
+  options={motos.map((m) => ({
+    label: m.nombre, 
+    id: m.idmoto
+  }))}
+  getOptionLabel={(option) => option.label}
+  onChange={(event, newValue) => {
+    if (newValue) {
+      abrirModal(motos.find(mot => mot.idmoto === newValue.id));
+    }
+  }}
+/>
 
         <ul>
-          {tipoUsuario==="Admin" || tipoUsuario=="User"?(
+          {usuario !==null?(
                <FontAwesomeIcon
             icon={faUser}
             style={{ color: "white", fontSize: "25px" }}

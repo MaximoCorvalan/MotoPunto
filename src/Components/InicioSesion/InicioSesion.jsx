@@ -5,63 +5,71 @@ import DialogCont from "../DialogCont/DialogCont";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useMotos } from "../../Context/ContextMoto";
-import Swal from "sweetalert2"; 
+import Swal from "sweetalert2";
 import Register from "../Register/Register";
 export default function InicioSesion({ onClose }) {
-  const [registrarse,setRegister] = useState(false);
+  const [registrarse, setRegister] = useState(false);
   const navigate = useNavigate();
-  const {SetTipoUsuario,tipoUsuario} = useMotos()
-  function IniciarSesion(e)
-  {  
-     e.preventDefault();
-       const form = e.target;
-       const usuario = form.usuario.value;
-       const contrasena = form.contraseña.value;
+  const { SetUsuario, usuario } = useMotos();
+  async function IniciarSesion(e) {
+    e.preventDefault();
+    const form = e.target;
+    const usuario = form.usuario.value;
+    const contrasena = form.contraseña.value;
 
-       if(usuario==="admin" && contrasena==="admin")
-        {
-          SetTipoUsuario("Admin")
-       
-          navigate("/Administradores/AtencionUsuarios")
+    const response = await fetch("https://localhost:7117/api/Usuario/EXISTE", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ Usuario: usuario, contrasena: contrasena }),
+    });
 
-        }else if (usuario==="prueba12" && contrasena==="pueba12")
-          {
-            SetTipoUsuario("User")
-            
-          }else
-            {Swal.fire({
-                title: "Usuario no encontrado",
-                text: "Por favor revise las credenciales ingresadas",
-                icon: "error",
-                confirmButtonText: "Cerrar",
-                customClass: {
-                  popup: "mi-alerta-custom",
-                  confirmButton: "mi-boton-rojo",
-                },
-                showClass: {
-                  popup: "swal2-show swal2-animate__fadeInDown",
-                },
-                hideClass: {
-                  popup: "swal2-hide swal2-animate__fadeOutUp",
-                },
-              }).then((result) => {
-                if (result.isConfirmed) {
-                  onClose();
-                }
-              });
+    if (!response.ok) 
+    {
+       Swal.fire({
+          title: "Usuario no encontrado",
+          text: "Por favor revise las credenciales ingresadas",
+          icon: "error",
+          confirmButtonText: "Cerrar",
+          customClass: {
+            popup: "mi-alerta-custom",
+            confirmButton: "mi-boton-rojo",
+          },
+          showClass: {
+            popup: "swal2-show swal2-animate__fadeInDown",
+          },
+          hideClass: {
+            popup: "swal2-hide swal2-animate__fadeOutUp",
+          },
+        }).then((result) => {
+          if (result.isConfirmed) {
+            onClose();
+          }
+        });
 
-            }
+    }else
+      {
+        const data = await response.json();
+      
+        if (data.idrol==1) {
+          SetUsuario(data);
+  
+          navigate("/Administradores/AtencionUsuarios");
+        } else  {
           
-     
-     
-     onClose();
+          SetUsuario(data);
+        } 
+        onClose();
+
+
+      }
+    
   }
 
   return (
     <>
-      <form
-        onSubmit={IniciarSesion}
-      >
+      <form onSubmit={IniciarSesion}>
         <div className="ConteinerLogin">
           <img className="LogoLogin" src={logo} alt="Logo MotoPunto" />
 
@@ -84,8 +92,7 @@ export default function InicioSesion({ onClose }) {
             onClick={(e) => {
               e.preventDefault();
 
-              setRegister(true)
-         
+              setRegister(true);
             }}
           >
             Registrarse
@@ -93,7 +100,7 @@ export default function InicioSesion({ onClose }) {
         </div>
       </form>
 
-    {registrarse && (
+      {registrarse && (
         <DialogCont //NO ME TERMINA DE GUSTAR QUE SE HABRA DENTRO DEL MISMO COMP TAL VEZ USAR REACT ROUTER EN ESTA PARTE (?)
           isOpen={registrarse}
           onClose={() => setRegister(false)}

@@ -15,7 +15,7 @@ export default function FiltroUsuario() {
 
   const manejarCambio =()=>
     {
-        alert("ffsadf")
+      
        SetAgregarMoto(true)
     }
 
@@ -30,16 +30,26 @@ export default function FiltroUsuario() {
         SetNombreFiltro(valor)
     }
 
-  const manejarDesde = (e) => {
-    setDesde(e.target.value);
-    SetFechaDesde(e.target.value);
-  };
+ const manejarDesde = (e) => {
+  const value = e.target.value;
+  if (!value || !/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+    console.error("Fecha desde no válida");
+    return; // No actualiza el estado si no es válida
+  }
+  setDesde(value);
+  SetFechaDesde(value);
+};
 
-  const manejarHasta = (e) => {
-    setHasta(e.target.value);
-    SetFechaHasta(e.target.value);
-  };
-
+const manejarHasta = (e) => {
+  const value = e.target.value;
+  console.log("el valor del hasta es"+value)
+  if (!value || !/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+    console.error("Fecha hasta no válida");
+    return; // No actualiza el estado si no es válida
+  }
+  setHasta(value);
+  SetFechaHasta(value);
+};
     return (
         <>
         <div className="contFiltroAdmin">

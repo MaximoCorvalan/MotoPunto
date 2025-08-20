@@ -19,7 +19,7 @@ import Clientes from "../Components/Clientes/Clientes";
 
 export default function ViewMain() {
 
-     const { tipoUsuario } = useMotos();
+     const { usuario } = useMotos();
 
 
     return (
@@ -33,7 +33,7 @@ export default function ViewMain() {
            
 
 
-              {tipoUsuario!=="Admin"?(
+              { usuario==null ||usuario.idrol!==1?(
                 <>
                 <ListaMarcas></ListaMarcas>
                 <Filtros></Filtros>
@@ -44,7 +44,8 @@ export default function ViewMain() {
             <main>
             
 
-              <div className={tipoUsuario ==="Admin"?"conteinerMainAdmin":"conteinerMain" }>
+            <div className={usuario !== null && usuario.idrol === 1 ? "conteinerMainAdmin" : "conteinerMain"}>
+
             
               <Routes>
 
@@ -55,7 +56,7 @@ export default function ViewMain() {
          
               </div>
             </main>
-               {tipoUsuario!=="Admin"?(            
+               {usuario==null ||usuario.idrol!==1?(            
                  <Footer></Footer>
                         
               ):null}

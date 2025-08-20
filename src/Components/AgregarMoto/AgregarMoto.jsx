@@ -10,10 +10,10 @@ export default function AgregarMoto() {
   const tipoMoto = [{ id: "Naked" }, { id: "Enduro" }, { id: "Scooters" }];
 
   const marcas = [
-    { id: 1, nombre: "KAWASAKI" },
-    { id: 2, nombre: "HONDA" },
+    { id: 2, nombre: "KAWASAKI" },
+    { id: 1, nombre: "HONDA" },
     { id: 3, nombre: "KYMCO" },
-    { id: 4, nombre: "BAJAJ" },
+    { id: 3, nombre: "BAJAJ" },
     { id: 5, nombre: "SUSUKI" },
     { id: 6, nombre: "HERO" },
   ];
@@ -45,7 +45,7 @@ export default function AgregarMoto() {
       {
       const form = formRef.current;
       const formData = new FormData(form);
-      alert(JSON.stringify(formData))
+
       const moto = {
         Motor: formData.get("motor"),
         Cilindrada: parseFloat(formData.get("cilindrada")),
@@ -70,7 +70,7 @@ export default function AgregarMoto() {
 
         imagenes: ArrayUrl.map((URLIMAGEN) => ({ URLIMAGEN })), // esto depende de tu DTO
       };
-      alert("apunto de hacer el post");
+   
 
       fetch("https://localhost:7117/api/moto", {
         method: "POST",
@@ -85,7 +85,7 @@ export default function AgregarMoto() {
 
           const data = await response.json(); // 👈 leés y usás el resultado directamente acá
           console.log("Moto creada:", data);
-          alert("Moto creada correctamente");
+ 
         })
         .catch((error) => {
           console.error("Error:", error.message);
@@ -155,11 +155,11 @@ export default function AgregarMoto() {
               type="button" // <- agregá esto
               className="btnAgregar"
               onClick={() => {
-                alert("entro");
+               
                 if (url.trim() !== "") {
                   setArrayUrl((prev) => {
                     const nuevoArray = [...prev, url];
-                    alert(nuevoArray);
+            
                     return nuevoArray;
                   });
                   SetUrl("");

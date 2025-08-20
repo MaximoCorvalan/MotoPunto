@@ -1,41 +1,85 @@
-import React from "react";
+
 import "../CardMotoDescripcion/CardMotoDescripcion.css";
-import InnerImageZoom from 'react-inner-image-zoom';
 
 
 import { useState ,useEffect} from "react";
 import Swal from "sweetalert2"; 
 import { useMotos } from "../../Context/ContextMoto";
 
+
 export default function CardMotoDescripcion({ onClose,motoSeleccionada }) {
+
+
 
   const [enviado, setEnviado] = useState(false);
   const [urlImagen,setUrlImagen] = useState(motoSeleccionada.imagens[0].urlimagen)
-  const {tipoUsuario} = useMotos()
+  const {usuario} = useMotos()
+
+  useEffect(()=>{
+
+    if( usuario !==null && usuario.idrol===1)
+      {
+        setEnviado(true);
+
+      }
+
+
+  },[]);
 
 
   if (!motoSeleccionada) {
     return <div>Cargando información de la moto...</div>;
   }
 
-function recibirAsesoramiento() {
+ async function  recibirAsesoramiento() {
   // Validar si el usuario está registrado
-  const registrado = tipoUsuario.trim() !== "";
+  const registrado = usuario ===null? false:true
 
   let titulo = "";
   let texto = "";
   let icono = "";
+  
 
   if (registrado) {
+
+    const Idusuario = usuario.idusuario;
+    const idmoto = motoSeleccionada.idmoto;
+    const estado =0;
+
+  
+
+
+
     setEnviado(true);
     titulo = "¡Gracias por tu interés!";
-    texto = "En breve un asesor se comunicará con vos al siguiente número 113242213";
+    texto = "En breve un asesor se comunicará con vos al siguiente número ";
     icono = "success";
+
+    const response = await fetch("https://localhost:7117/api/Consulta/crearconsulta",
+      {
+        method:"POST",
+         headers: {
+        "Content-Type": "application/json",
+      },
+      body :JSON.stringify({ Idusuario: Idusuario, idmoto: idmoto ,Estado:estado}),
+      })
+
+      if(!response.ok)
+        {
+          titulo = "ERROR AL INTENTAR SUBIR LA CONSULTA"
+          texto="CONTACTESE CON EL PROGRAMADROR"
+        }
+
+
+
   } else {
     titulo = "Primero debe registrarse";
     texto = "Por favor, complete el registro para continuar.";
     icono = "error";
   }
+
+
+
 
   Swal.fire({
     title: titulo,
@@ -163,7 +207,7 @@ function recibirAsesoramiento() {
         </div>
       </div>
 
-      {!enviado && (
+      {!enviado  && (
         <button className="btnContacto" onClick={recibirAsesoramiento}>
           Recibir asesoramiento
         </button>
