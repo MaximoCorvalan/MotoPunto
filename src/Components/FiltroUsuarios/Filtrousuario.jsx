@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { useMotos } from '../../Context/ContextMoto';
 import "../../Components/FiltroUsuarios/filtrousuario.css"
 import AgregarMoto from "../AgregarMoto/AgregarMoto";
-import { faL, faSleigh, faTurnUp } from "@fortawesome/free-solid-svg-icons";
+
 import DialogCont from "../DialogCont/DialogCont";
 
 export default function FiltroUsuario() {
-  const { SetFechaDesde, SetFechaHasta } = useMotos();
-  const {SetNombreFiltro}=useMotos()
+  const { SetFechaDesde, SetFechaHasta ,SetNombreFiltro} = useMotos();
+  
 
   const [desde, setDesde] = useState("");
   const [hasta, setHasta] = useState("");
@@ -45,7 +45,7 @@ const manejarHasta = (e) => {
   console.log("el valor del hasta es"+value)
   if (!value || !/^\d{4}-\d{2}-\d{2}$/.test(value)) {
     console.error("Fecha hasta no válida");
-    return; // No actualiza el estado si no es válida
+    return; 
   }
   setHasta(value);
   SetFechaHasta(value);

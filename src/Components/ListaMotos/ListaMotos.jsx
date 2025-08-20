@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import data from '../../Data/Moto.json';
 import CardMoto from '../CardMoto/CardMoto';
 import CardMotoDescripcion from '../CardMotoDescripcion/CardMotoDescripcion';
 import DialogCont from '../DialogCont/DialogCont';
@@ -8,7 +7,7 @@ import { useMotos } from '../../Context/ContextMoto';
 function ListaMotos() {
   const [modalAbierto, setModalAbierto] = useState(false);
   const [motoSeleccionada, setMotoSeleccionada] = useState(null);
-const { motos,FiltroMarca,FiltroCilindrada } = useMotos();
+const { motos,FiltroMarca } = useMotos();
 if (!motos) return <p>Cargando motos...</p>;
 
   const abrirModal = (moto) => {

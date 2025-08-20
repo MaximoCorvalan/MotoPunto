@@ -17,7 +17,7 @@ export default function CardMoto({onclick, moto})
     <motion.div
       initial={{ x: -100, opacity: 0 }}         // al inicio
       animate={{ x: 0, opacity: 1 }}            // al montarse
-      whileHover={{ scale: 1.05 }}               // al hacer hover
+      whileHover={{ scale: 1.05 }}      
         transition={{ duration: 1}}
       className='conteinercardMoto'  
       onClick={onclick}       // duración de animación

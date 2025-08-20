@@ -1,7 +1,4 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import data from "../Data/Moto.json";
-import UsuariosInteresados from "../Data/UsuariosInteresados.json"
-import { Alert } from "@mui/joy";
 
 
 const MotoContext = createContext();
@@ -46,14 +43,12 @@ export default function ContextMoto({ children }) {
 }, []);
 
 
-
+//FILTROS DE MOTO
   useEffect(() => {
       if(motos===null){return;}
 
     let motosF = dataAux;
-    alert(JSON.stringify(motosF))
   
-
   if (FiltroCilindrada) {
   const filtroNum = Number(FiltroCilindrada);
   motosF = motosF.filter((moto) =>
@@ -127,7 +122,7 @@ export default function ContextMoto({ children }) {
   const [dia, mes, anio] = fechaStr.trim().split("/");
   return new Date(`${anio}-${mes}-${dia}`);
 }
-
+//FILTROS DE CLIENTES
 useEffect(() => {
   let usuariosInteresadosAux = clientes;
  

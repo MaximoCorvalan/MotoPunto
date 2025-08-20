@@ -13,7 +13,7 @@ export default function AgregarMoto() {
     { id: 2, nombre: "KAWASAKI" },
     { id: 1, nombre: "HONDA" },
     { id: 3, nombre: "KYMCO" },
-    { id: 3, nombre: "BAJAJ" },
+    { id: 4, nombre: "BAJAJ" },
     { id: 5, nombre: "SUSUKI" },
     { id: 6, nombre: "HERO" },
   ];

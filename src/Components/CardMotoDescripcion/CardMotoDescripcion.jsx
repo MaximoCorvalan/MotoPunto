@@ -1,7 +1,5 @@
 
 import "../CardMotoDescripcion/CardMotoDescripcion.css";
-
-
 import { useState ,useEffect} from "react";
 import Swal from "sweetalert2"; 
 import { useMotos } from "../../Context/ContextMoto";

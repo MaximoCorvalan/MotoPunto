@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import data from "../../Data/UsuariosInteresados.json";
+import { useEffect } from "react";
+
 import { useMotos } from "../../Context/ContextMoto";
 
 import "../Clientes/clientes.css";

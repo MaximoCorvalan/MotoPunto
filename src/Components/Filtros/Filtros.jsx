@@ -1,11 +1,8 @@
 import "../Filtros/Filtros.css";
-
 import { useEffect, useState } from "react";
 import Contador from "../ContadorAnimado/Contador"
-
 import { useMotos } from "../../Context/ContextMoto";
-import { parse } from "@fortawesome/fontawesome-svg-core";
-import { useEffectl } from "react";
+
 
 export default function Filtros() {
 const { setFiltroPrecio,SetFiltroCilindrada, FiltroCilindrada,FiltroMarca ,FiltroPrecio,SetFiltroTipoMoto} = useMotos();
@@ -130,8 +127,8 @@ useEffect(() => {
         <div className="conteinerFiltroPrecio">
           <p  className="decoLabel">Precio Maximo</p>
           <input
-          id="input"
-            placeholder="100000.00"
+          id="input"       
+            placeholder="10000.00"
             className="InputPrecio"
              value={FiltroPrecio || " "}
       

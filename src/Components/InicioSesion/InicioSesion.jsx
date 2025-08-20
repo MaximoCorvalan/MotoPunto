@@ -101,7 +101,7 @@ export default function InicioSesion({ onClose }) {
       </form>
 
       {registrarse && (
-        <DialogCont //NO ME TERMINA DE GUSTAR QUE SE HABRA DENTRO DEL MISMO COMP TAL VEZ USAR REACT ROUTER EN ESTA PARTE (?)
+        <DialogCont 
           isOpen={registrarse}
           onClose={() => setRegister(false)}
         >

@@ -15,7 +15,7 @@ import CardMotoDescripcion from "../CardMotoDescripcion/CardMotoDescripcion";
 function NavBar() {
   const [modalAbierto, setModalAbierto] = useState(false);
   const [modalAbiertoLogin, setModalAbiertoLogin] = useState(false);
- const {motos,usuario} = useMotos()
+  const {motos,usuario} = useMotos()
 
   const [motoSeleccionada, setMotoSeleccionada] = useState(null);
 
