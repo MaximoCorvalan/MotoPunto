@@ -17,7 +17,7 @@ export default function ContextMoto({ children }) {
   const [dataAux,SetDataAux]=useState(null)
   const [fechaDesde,SetFechaDesde]=useState(null)
   const [fechaHasta,SetFechaHasta]=useState(null);
-  const [nombreF,SetNombreFiltro] = useState(" ")
+  const [nombreF,SetNombreFiltro] = useState("")
 
   useEffect(() => {
   async function fetchData() {
@@ -165,6 +165,7 @@ if (fechaDesde && fechaHasta) {
   
 
   console.log(JSON.stringify(usuariosInteresadosAux))
+  console.log(nombreF)
 if (!usuariosInteresadosAux?.length ) {
   obtenerClientes();
 }
@@ -180,7 +181,7 @@ if (!usuariosInteresadosAux?.length ) {
         motos,
         setFiltroPrecio,SetFiltroTipoMoto,
         SetFiltroCilindrada,
-        SetFiltroMarca,SetUsuario,SetClientes,SetNombreFiltro,SetFechaHasta,SetFechaDesde,FiltoTipoMoto,FiltroPrecio,FiltroMarca,FiltroCilindrada,usuario,clientes
+        SetFiltroMarca,SetUsuario,SetClientes,SetNombreFiltro,SetFechaHasta,SetFechaDesde,FiltoTipoMoto,FiltroPrecio,FiltroMarca,FiltroCilindrada,usuario,clientes,obtenerClientes
       }}
     >
       {children}

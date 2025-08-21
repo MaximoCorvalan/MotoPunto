@@ -50,13 +50,7 @@ export default function Clientes() {
     }
   }
 
-  useEffect(() => {
 
-    
-    
-
-    obtenerClientes();
-  }, []);
 
   return (
     <>

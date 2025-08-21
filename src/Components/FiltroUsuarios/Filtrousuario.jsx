@@ -6,9 +6,9 @@ import AgregarMoto from "../AgregarMoto/AgregarMoto";
 import DialogCont from "../DialogCont/DialogCont";
 
 export default function FiltroUsuario() {
-  const { SetFechaDesde, SetFechaHasta ,SetNombreFiltro} = useMotos();
+  const { SetFechaDesde, SetFechaHasta ,SetNombreFiltro,obtenerClientes} = useMotos();
   
-
+  const [nombre,SetNombre] = useState("");
   const [desde, setDesde] = useState("");
   const [hasta, setHasta] = useState("");
   const [agregarMoto,SetAgregarMoto]=useState(false)
@@ -25,8 +25,7 @@ export default function FiltroUsuario() {
         }
    const manejarInput=(e)=>
     {  const valor = e.target.value;
-
-
+        SetNombre(valor);
         SetNombreFiltro(valor)
     }
 
@@ -53,6 +52,24 @@ const manejarHasta = (e) => {
     return (
         <>
         <div className="contFiltroAdmin">
+
+        <button className="btnMoto" onClick={()=>
+        {
+            SetNombreFiltro("");
+            setDesde("");
+            setHasta("");
+            SetNombre("");
+            SetNombreFiltro("")
+            SetFechaHasta(null)
+            SetFechaDesde(null)
+            obtenerClientes();
+
+
+        }}>
+          BORRAR FILTRO
+        </button>
+
+
             <div className="contFiltro">
             <label htmlFor="desde">Del</label>
         <input
@@ -74,7 +91,7 @@ const manejarHasta = (e) => {
 
         <div className="contFiltro">
             <label>Buscar por Nombre</label>
-        <input className="inputNombre" name="inputName" onChange={manejarInput} type="text" />
+        <input className="inputNombre" name="inputName" value={nombre}  onChange={manejarInput} type="text" />
         </div>
     
         <button className="btnMoto" onClick={manejarCambio}>Agregar Motocicleta</button>
