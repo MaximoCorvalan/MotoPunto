@@ -25,8 +25,8 @@ export default function CardMoto({onclick, moto})
     >
       <img src={moto.imagens[0].urlimagen} className="imgMoto" alt="" />
       <div className='caracteristicasConteiner'>
-      <p>{moto.marca}</p>
-      <p> {moto.modelo} </p>
+      <p>{moto.marcaDescripcion}</p>
+      <p> {moto.nombre} </p>
       <p>${moto.precio}</p>
       </div>
 

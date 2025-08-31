@@ -1,20 +1,21 @@
 .ConteinerMarcas
 {
   
-
   margin: 0;
   background-color: #0e0809;
-  height: 58px;
-    grid-area:marcas;
+  height: 57px;
   display:  flex;
   flex-direction:  row;
    align-items: center;
   justify-content: space-around;
 
+  
+
+
 }
 .marca-tab {
   position: relative;
-  padding: 15px 24px;
+  padding: 20px 24px;
   cursor: pointer;
   color: white;
   font-weight: bold;

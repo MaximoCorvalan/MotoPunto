@@ -5,20 +5,20 @@ import { useMotos } from "../../Context/ContextMoto";
 import { useEffect } from "react";
 
 
-export default function ListaMarcas() {
+ function ListaMarcas() {
   const tabs = ["HONDA", "KAWASAKI", "BAJAJ", "KYMCO", "SUZUKI", "HERO", "TODOS"];
   const [activeTab, setActiveTab] = useState("TODOS");
-  const {SetFiltroMarca,FiltroMarca} =useMotos()
+  const {SetFiltroMarca,FiltroMarca,setFiltroPrecio} =useMotos()
 
-  function establecerMarca(tab)
-  {
-    setActiveTab(tab);
-    SetFiltroMarca(tab)
-
-
-
-
+function establecerMarca(tab) {
+  if(tab==="TODOS") {
+    setFiltroPrecio(null);
+    
   }
+  setActiveTab(tab);
+  SetFiltroMarca(tab);
+}
+
   useEffect(()=>{
     if(FiltroMarca===null)
       {
@@ -33,7 +33,7 @@ export default function ListaMarcas() {
       {tabs.map((tab) => (
         <li
           key={tab}
-          className={`marca-tab ${activeTab === tab ? "active" : ""}`}
+          className={`marca-tab`}
           onClick={() => establecerMarca(tab)}
         >
           {activeTab === tab && (
@@ -49,3 +49,4 @@ export default function ListaMarcas() {
     </ul>
   );
 }
+export default ListaMarcas;

@@ -29,17 +29,25 @@ export default function ViewMain() {
 
         <div className="layout">
 
-            <NavBar></NavBar>
+       
            
 
 
               { usuario==null ||usuario.idrol!==1?(
                 <>
+                <div className="contMenu">
+                    <NavBar></NavBar>
                 <ListaMarcas></ListaMarcas>
                 <Filtros></Filtros>
+                </div>
                 </>
              
-              ):(<FiltroUsuario></FiltroUsuario>)}
+              ):
+              (
+                <>     <NavBar></NavBar>
+              <FiltroUsuario></FiltroUsuario>
+                </>
+              )}
 
             <main>
             

@@ -85,7 +85,7 @@ export default function ContextMoto({ children }) {
 
       }
   
-    if (motosF.length == 0 || FiltroMarca == "TODOS") {
+    if (motosF.length == 0 && FiltroMarca == "TODOS") {
       
  
       setMotos(dataAux);
